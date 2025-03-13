@@ -10,7 +10,7 @@ def instantiate_opencv_function_args_seed(params_info):
         #check format = numpy.darray
         if 'default' in info and info['default'] is 'None':
             initialized_params[param] = None
-        if 'format' in info and info['format'] == 'numpy.ndarray':
+        if 'size' in info and info['size'] == 'numpy.ndarray':
             # Handle initialization for different data types
             if 'type' in info and (('float' in info['type']) or ('int' in info['type']) ):
                 if '1xN/Nx1 3-channel' in info['description']:
@@ -124,7 +124,7 @@ def instantiate_opencv_function_args_seed(params_info):
             else:
                 initialized_params[param] = np.random.rand(100, 100).astype(np.float32)
 
-        elif 'format' in info and info['format'] == 'tuple':
+        elif 'size' in info and info['size'] == 'tuple':
             # Initialize a dummy tuple
             if param == 'window':
                 initialized_params[param] = (0, 0, 100, 100)
