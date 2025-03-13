@@ -151,7 +151,7 @@ def mutate_parameters(args, params_info, mutation_history):
         elif ('flag' in param_info) and (param_info['flag'] == 'None'):
             mutated_param = arg
         else:
-            if param_info.get('format') == 'numpy.ndarray':
+            if param_info.get('size') == 'numpy.ndarray':
                 if (param_name == 'points') or('2D point'in param_info['description']) or ('2D points' in param_info['description']) or ('2xN/Nx2 1-channel' in param_info['description']) or ('corners' in param_name) or ('points (x, y)' in param_info['description']) or ('1xN/Nx1 2-channel' in param_info['description']) :
                     arg = np.resize(arg, reshape_2dpoint)
                 elif ('uv_plane' in param_name):
@@ -213,7 +213,7 @@ def mutate_parameters(args, params_info, mutation_history):
                 else:
                     arg = np.resize(arg, reshape_maxtrix)
             while (mutated_param is None) or (not mutation_history.check_combination(mutated_param)) and (attempt < 10):
-                if param_info.get('format') == 'numpy.ndarray':
+                if param_info.get('size') == 'numpy.ndarray':
                     if '2x1 shape' in param_info['description']:
                         mutated_param = arg
                     elif ('warp_matrix 2x3' in param_info['description']):
@@ -225,7 +225,7 @@ def mutate_parameters(args, params_info, mutation_history):
                         mutated_param = mutated_param.reshape(-1, 1, 2).copy()
                     elif ('histogram' in param_info['description']):
                         mutated_param = cv2.calcHist([mutated_param], [0], None, [256], [0, 256])
-                elif param_info.get('format') == 'tuple':
+                elif param_info.get('size') == 'tuple':
                     mutated_param = apply_tuple_mutation(arg, param_info, strategy, param_name, reshape_vector)
                 elif 'char' in param_type:
                     mutated_param = apply_char_mutation(arg, param_info, strategy, param_name, reshape_vector)
@@ -253,7 +253,7 @@ def mutate_parameters(args, params_info, mutation_history):
 
 
         mutated_args.append(mutated_param)
-        if param_info.get('format') == 'numpy.ndarray':
+        if param_info.get('size') == 'numpy.ndarray':
             pre_type = mutated_param.dtype.name
         if param_name == 'src' or param_name =='img' or param_name =='src1' or param_name =='img1':
             src_type = mutated_param.dtype.name
@@ -269,7 +269,7 @@ def mutate_parameters(args, params_info):
 
     for arg, (param_name, param_info) in zip(args, params_info.items()):
         # 检查参数类型，并应用相应的突变规则
-        if param_info.get('format') == 'numpy.ndarray':
+        if param_info.get('size') == 'numpy.ndarray':
             # 对于 numpy 数组类型的参数
             if arg.dtype == np.uint8:
                 # 随机改变 uint8 类型的数组中的一些值
@@ -281,7 +281,7 @@ def mutate_parameters(args, params_info):
                 mutated_arg = arg + noise
             else:
                 mutated_arg = arg
-        elif param_info.get('format') == 'tuple':
+        elif param_info.get('size') == 'tuple':
             mutated_arg = tuple(x + random.uniform(-1.0, 1.0) if isinstance(x, (float, int)) else x for x in arg)
 
         elif param_info.get('type') == 'int':
