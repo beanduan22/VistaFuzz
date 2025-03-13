@@ -1,7 +1,7 @@
 def get_HoughLinesPointSet_params_info():
     info = {
         'points': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '2D points 2-channel array of points'
         },
@@ -60,7 +60,7 @@ def get_HoughLinesPointSet_params_info():
 def get_integral_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32',
             'description': 'Input image as a single-channel 8-bit or floating-point.'
         },
@@ -79,17 +79,17 @@ def get_integral_params_info():
 def get_integral2_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32 or float64',
             'description': 'Input image that is a single-channel 8-bit or floating-point.'
         },
         'sum': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32 or float64 same type as src',
             'description': 'Integral image as (W+1)x(H+1), 32-bit integer or floating-point (32f or 64f).'
         },
         #'sqsum': {
-        #    'format': 'numpy.ndarray',
+        #    'size': 'numpy.ndarray',
         #    'type': 'CV_64F',
         #    'description': 'Integral image of squared pixel values; double-precision floating-point (64f) array.'
         #},
@@ -108,23 +108,23 @@ def get_integral2_params_info():
 def get_integral3_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32 or float64',
             'description': 'Input image as W x H, 8-bit or floating-point (32f or 64f).'
         },
         'sum': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': '(W+1) x (H+1), int32 or float32 or float64',
             'description': 'Integral image as (W+1) x (H+1), 32-bit integer or floating-point (32f or 64f).'
         },
         'sqsum': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': '(W+1) x (H+1), float64',
             'default': 'None',
             'description': 'Integral image for squared pixel values; double-precision floating-point (64f) array.'
         },
         'tilted': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'same as sum',
             'description': 'Integral for the image rotated by 45 degrees; same data type as sum.'
         },
@@ -147,7 +147,7 @@ def get_integral3_params_info():
 def get_Canny_params_info():
     info = {
         'image': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input image, grayscale and 8-bit.'
         },
@@ -168,17 +168,17 @@ def get_Canny_params_info():
 def get_CamShift_params_info():
     info = {
         'probImage': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32',
             'description': 'Back projection of the object histogram. An image used to guide the search for the location of the object.'
         },
         'window': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Initial search window. For example: (x, y, width, height).'
         },
         'criteria': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Criteria for the algorithm termination. The tuple should be in the form: (type, max_iter, epsilon).'
         },
@@ -191,12 +191,12 @@ def get_CamShift_params_info():
 def get_intersectConvexConvex_params_info():
     info = {
         '_p1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'First input convex polygon. It is passed as a 2D point set.'
         },
         '_p2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Second input convex polygon. Like the first one, it is passed as a 2D point set.'
         },
@@ -249,12 +249,12 @@ def get_CascadeClassifier_convert_params_info():#bug
 def get_EMD_params_info():
     info = {
         'signature1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '2x3 First signature, a numpy of type float32.'
         },
         'signature2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '2x3 Second signature, similar to signature1, where each row is a feature with weight and dimensions.'
         },
@@ -274,12 +274,12 @@ def get_EMD_params_info():
 def get_GaussianBlur_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32',
             'description': 'Input image on which the Gaussian blur will be applied.'
         },
         'ksize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Gaussian kernel size. ksize.width and ksize.height can differ but they both must be positive and odd.'
         },
@@ -327,7 +327,7 @@ def get_HOGDescriptor_getDefaultPeopleDetector_params_info():
 def get_HoughCircles_params_info():
     info = {
         'image': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': '8-bit, single-channel grayscale input image.'
         },
@@ -373,7 +373,7 @@ def get_HoughCircles_params_info():
 def get_HoughLines_params_info():
     info = {
         'image': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input image (grayscale) on which to perform line detection. The image should be edge detected using, for example, the Canny edge detector.'
         },
@@ -399,7 +399,7 @@ def get_HoughLines_params_info():
 def get_HoughLinesP_params_info():
     info = {
         'image': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input edge image (grayscale) on which to perform line detection. Typically, this is an edge-detected image using the Canny edge detector.'
         },
@@ -434,7 +434,7 @@ def get_HoughLinesP_params_info():
 def get_HoughLinesWithAccumulator_params_info():
     info = {
         'image': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input image (grayscale) for line detection, typically edge-detected.'
         },
@@ -460,7 +460,7 @@ def get_HoughLinesWithAccumulator_params_info():
 def get_HuMoments_params_info():
     info = {
         'moments': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64',
             'description': 'Array of moments, which can be computed using cv2.moments(). It should be a 1D array of 7 elements.'
         },
@@ -474,12 +474,12 @@ def get_HuMoments_params_info():
 def get_KeyPoint_convert_params_info():
     info = {
         'keypoints': {
-            'format': 'list of cv2.KeyPoint',
+            'size': 'list of cv2.KeyPoint',
             'type': 'cv2.KeyPoint',
             'description': 'A list of cv2.KeyPoint objects. These are usually obtained from feature detection algorithms like SIFT, ORB, etc.'
         },
         'keypointIndexes': {
-            'format': 'list of int',
+            'size': 'list of int',
             'type': 'int',
             'default': 'None',
             'description': 'Optional list of indices to be converted. If None, all keypoints are converted.'
@@ -511,12 +511,12 @@ def get_KeyPoint_overlap_params_info():
 def get_LUT_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input array of 8-bit elements. This is the source image or array for which the LUT will be applied. There is no default value for this parameter; it must be provided by the user.'
         },
         'lut': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'flag':'None',
             'description': 'Look-up table of 256 elements. There is no default value for this parameter; it must be provided by the user.'
@@ -532,7 +532,7 @@ def get_LUT_params_info():
 def get_Laplacian_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'unit8 or float32 or float64',
             'description': 'Source image. The image from which to calculate the Laplacian.'
         },
@@ -552,17 +552,17 @@ def get_Laplacian_params_info():
 def get_Mahalanobis_params_info():
     info = {
         'v1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '3x1'
         },
         'v2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '3x1'
         },
         'icovar': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Inverse covariance 3x3 matrix. This matrix is used to weight the distance calculation'
         },
@@ -576,7 +576,7 @@ def get_Mahalanobis_params_info():
 def get_PCACompute_params_info():
     info = {
         'data': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'The projected data that will be backprojected to the original space. Each row represents a data point in the reduced space.'
         },
@@ -587,7 +587,7 @@ def get_PCACompute_params_info():
             'description': 'The mean vector of the original data. It is subtracted from the initial data before projecting and added back during backprojection.'
         },
         'maxComponents': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'default': '3',
             'flag': 'None',
@@ -603,12 +603,12 @@ def get_PCACompute_params_info():
 def get_PSNR_params_info():
     info = {
         'src1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32 or float64',
             'description': 'First input array. The original image against which quality measurement is to be done.'
         },
         'src2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32 or float64 as same as src1',
             'description': 'Second input array of the same size and type as src1. Typically, this is the reconstructed image after compression or any other processing.'
         },
@@ -628,7 +628,7 @@ def get_PSNR_params_info():
 def get_RQDecomp3x3_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64',
             'description': 'Input 3x3 matrix that is to be decomposed.'
         },
@@ -642,7 +642,7 @@ def get_RQDecomp3x3_params_info():
 def get_Rodrigues_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64',
             'description': 'Input rotation (3x1 or 1x3) or rotation matrix (3x3).'
         },
@@ -656,22 +656,22 @@ def get_Rodrigues_params_info():
 def get_SVBackSubst_params_info():
     info = {
         'w': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'The singular values of the input matrix A, represented as a 1D array.'
         },
         'u': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'The matrix of left singular vectors U of the input matrix A, represented as a 2D array.'
         },
         'vt': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'The transpose of the matrix of right singular vectors V of the input matrix A, represented as a 2D array.'
         },
         'rhs': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'The right-hand side matrix B, for which the linear system is solved.'
         },
@@ -685,7 +685,7 @@ def get_SVBackSubst_params_info():
 def get_SVDecomp_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64',
             'description': 'Input matrix to decompose. It can be of any size and type CV_32F or CV_64F.'
         },
@@ -704,7 +704,7 @@ def get_SVDecomp_params_info():
 def get_Scharr_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32 or float64',
             'description': 'Input image.'
         },
@@ -736,7 +736,7 @@ def get_Scharr_params_info():
 def get_Sobel_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'any',
             'description': 'Input image.'
         },
@@ -771,17 +771,17 @@ def get_Sobel_params_info():
 def get_absdiff_params_info():
     info = {
         'src1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8 or float32 or float64',
             'description': 'First input array or a scalar.'
         },
         'src2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8 or float32 or float64 as same as src1',
             'description': 'Second input array or a scalar. It must have the same size and type as src1 if it is an array.'
         },
         'dst': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'optional',
             'description': 'Output array that will have the same size and type as the input arrays. This parameter is optional; if not provided, a new array will be created to hold the result.'
         },
@@ -795,12 +795,12 @@ def get_absdiff_params_info():
 def get_accumulate_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'CV_8UC(n), CV_16UC(n), CV_32FC(n), CV_64FC(n)',
             'description': 'Input image of type CV_8UC(n), CV_16UC(n), CV_32FC(n) or CV_64FC(n), where n is a positive integer.'
         },
         'mask': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'optional',
             'description': 'Optional operation mask to specify which pixels are accumulated.'
         },
@@ -814,18 +814,18 @@ def get_accumulate_params_info():
 def get_accumulateProduct_params_info():
     info = {
         'src1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': '8-bit or 32-bit float',
             'description': 'First input image, 1- or 3-channel, 8-bit or 32-bit floating point.'
         },
         'src2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': '8-bit or 32-bit float',
             'description': 'Second input image of the same type and the same size as src1.'
         },
 
         'mask': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'optional',
             'description': 'Optional operation mask to specify which pixels in the input images are processed.'
         },
@@ -839,12 +839,12 @@ def get_accumulateProduct_params_info():
 def get_accumulateSquare_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': '8-bit or 32-bit float',
             'description': 'Input image as 1- or 3-channel, 8-bit or 32-bit floating point.'
         },
         'mask': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'optional',
             'description': 'Optional operation mask to specify which pixels in the input image are accumulated.'
         },
@@ -858,13 +858,13 @@ def get_accumulateSquare_params_info():
 def get_accumulateWeighted_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input image as  8-bit 3-channel, 8-bit or 32-bit floating point.'
         },
 
         'mask': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 as same as src',
             'description': 'Input image as 8-bit 3-channel .'
         },
@@ -883,7 +883,7 @@ def get_accumulateWeighted_params_info():
 def get_adaptiveThreshold_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Source 8-bit single-channel image.'
         },
@@ -922,12 +922,12 @@ def get_adaptiveThreshold_params_info():
 def get_add_params_info():
     info = {
         'src1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32 or float64',
             'description': 'First input array or a scalar.'
         },
         'src2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'as same as src uint8 or float32 or float64',
             'description': 'Second input array or a scalar. It must have the same size and the same number of channels as src1 if it is an array.'
         },
@@ -941,7 +941,7 @@ def get_add_params_info():
 def get_addText_params_info():
     info = {
         'img': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': '8-bit 3-channel',
             'description': '8-bit 3-channel image where the text should be drawn.'
         },
@@ -950,7 +950,7 @@ def get_addText_params_info():
             'description': 'Text to write on an image.'
         },
         'org': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Point(x, y) where the text should start on an image.'
         },
@@ -964,7 +964,7 @@ def get_addText_params_info():
             'description': 'Size of the font. If not specified, a system-dependent default value is used.'
         },
         'color': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Color of the font in BGRA where A = 255 is fully transparent.'
         },
@@ -992,7 +992,7 @@ def get_addText_params_info():
 def get_addWeighted_params_info():
     info = {
         'src1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32 or float64',
             'description': 'First input array.'
         },
@@ -1001,7 +1001,7 @@ def get_addWeighted_params_info():
             'description': 'Weight of the first array elements.'
         },
         'src2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32 or float64 as same as src',
             'description': 'Second input array of the same size and channel number as src1.'
         },
@@ -1029,7 +1029,7 @@ def get_addWeighted_params_info():
 def get_applyColorMap_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'The source image, grayscale or colored.'
         },
@@ -1048,7 +1048,7 @@ def get_applyColorMap_params_info():
 def get_approxPolyDP_params_info():
     info = {
         'curve': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input vector of 2D points stored in numpy.ndarray or a list of points.'
         },
@@ -1070,7 +1070,7 @@ def get_approxPolyDP_params_info():
 def get_arcLength_params_info():
     info = {
         'curve': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'unit8 or float32',
             'description': 'Input vector of 2D points representing the curve or contour, stored in a numpy.ndarray or a list of points.'
         },
@@ -1088,22 +1088,22 @@ def get_arcLength_params_info():
 def get_arrowedLine_params_info():
     info = {
         'img': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'unit8 or float32 or float64',
             'description': 'Image on which the arrow is to be drawn.'
         },
         'pt1': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'The point the arrow starts from (x1, y1).'
         },
         'pt2': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'The point the arrow points to (x2, y2).'
         },
         'color': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Line color (B,G,R).'
         },
@@ -1138,12 +1138,12 @@ def get_arrowedLine_params_info():
 def get_batchDistance_params_info():
     info = {
         'src1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'First batch of input feature vectors.'
         },
         'src2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'as same as src float32',
             'description': 'Second batch of input feature vectors.'
         },
@@ -1154,7 +1154,7 @@ def get_batchDistance_params_info():
             'description': 'Output data type for the distances. It can be CV_32S, CV_32F, etc.'
         },
         'dist': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'unit8',
             'description': 'Output array of distances between pairs of vectors.'
         },
@@ -1187,7 +1187,7 @@ def get_batchDistance_params_info():
 def get_bilateralFilter_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32',
             'description': 'Source image.'
         },
@@ -1219,12 +1219,12 @@ def get_bilateralFilter_params_info():
 def get_bitwise_and_params_info():
     info = {
         'src1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'unit8 or float32',
             'description': 'First input array or a scalar.'
         },
         'src2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'unit8 or float32',
             'description': 'Second input array or a scalar. It must have the same size and the same number of channels as src1 if it is an array.'
         },
@@ -1238,7 +1238,7 @@ def get_bitwise_and_params_info():
 def get_bitwise_not_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'unit8 or float32 or float64',
             'description': 'Input array.'
         },
@@ -1252,12 +1252,12 @@ def get_bitwise_not_params_info():
 def get_bitwise_or_params_info():
     info = {
         'src1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'unit8 or float32 or float64',
             'description': 'First input array or a scalar.'
         },
         'src2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'unit8 or float32 or float64 as same as src',
             'description': 'Second input array or a scalar. It must have the same size and the same number of channels as src1 if it is an array.'
         },
@@ -1271,12 +1271,12 @@ def get_bitwise_or_params_info():
 def get_bitwise_xor_params_info():
     info = {
         'src1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'unit8 or float32 or float64',
             'description': 'First input array or a scalar.'
         },
         'src2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'unit8 or float32 or float64 as same as src',
             'description': 'Second input array or a scalar. It must have the same size and the same number of channels as src1 if it is an array.'
         },
@@ -1290,22 +1290,22 @@ def get_bitwise_xor_params_info():
 def get_blendLinear_params_info():
     info = {
         'src1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'unit8 or float32',
             'description': 'First source array.'
         },
         'src2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'unit8 or float32 as same as src',
             'description': 'Second source array. It must have the same size and the same number of channels as src1.'
         },
         'weights1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'unit8 or float32 as same as src',
             'description': 'Weights for the first source array. Must have the same size as the source arrays.'
         },
         'weights2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'unit8 or float32 as same as src',
             'description': 'Weights for the second source array. Must have the same size as the source arrays.'
         },
@@ -1319,12 +1319,12 @@ def get_blendLinear_params_info():
 def get_blur_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'unit8 or float32 or float64',
             'description': 'Input image; it can have any number of channels, which are processed independently, but the depth should be one of the specified types.'
         },
         'ksize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Blurring kernel size.'
         },
@@ -1363,7 +1363,7 @@ def get_borderInterpolate_params_info():
 def get_boundingRect_params_info():
     info = {
         'array': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input 2D point set, stored in a numpy.ndarray or a list of points representing the contour. If the input is a grayscale image, non-zero pixels are treated as points.'
         },
@@ -1377,12 +1377,12 @@ def get_boundingRect_params_info():
 def get_buildOpticalFlowPyramid_params_info():#can not
     info = {
         'img': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': '8-bit single-channel'
         },
         'winSize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Window size of optical flow algorithm. It must be not less than winSize argument of calcOpticalFlowPyrLK.'
         },
@@ -1402,23 +1402,23 @@ def get_buildOpticalFlowPyramid_params_info():#can not
 def get_calcBackProject_params_info():
     info = {
         'images': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'List of input images (source images) on which the back projection is calculated.'
         },
         'channels': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'flag': 'None',
             'description': 'List of the dims channels used to compute the back projection. The number of channels must match the histogram dimensionality.'
         },
         'hist': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 as same as ',
             'description': 'Input histogram that can be dense or sparse.'
         },
         'ranges': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'float32',
             'flag': 'None',
             'default': '[0, 180, 0, 256]',
@@ -1440,12 +1440,12 @@ def get_calcBackProject_params_info():
 def get_calcCovarMatrix_params_info():
     info = {
         'samples': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32',
             'description': '8-bit single-channel The type should match the ctype parameter if specified.'
         },
         'mean': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32 as same as',
             'description': '1xN/Nx1 2-channel'
         },
@@ -1465,12 +1465,12 @@ def get_calcCovarMatrix_params_info():
 def get_calcHist_params_info():
     info = {
         'images': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32',
             'description': 'List of source images; they all should have the same depth, CV_8U or CV_32F, and the same size. Each of them can have an arbitrary number of channels.'
         },
         'channels': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'uint8',
             'flag': 'None',
             'description': 'List of the dims channels used to compute the histogram. The index of the channel in images to be used.'
@@ -1482,12 +1482,12 @@ def get_calcHist_params_info():
             'description': 'Optional mask. If the matrix is not empty, it must be an 8-bit array of the same size as images[i]. The non-zero mask elements mark the array elements counted in the histogram.'
         },
         'histSize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'uint8',
             'description': 'Array of histogram sizes in each dimension.'
         },
         'ranges': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'uint8',
             'flag': 'None',
             'description': 'Array of the dims arrays of the histogram bin boundaries in each dimension.'
@@ -1502,17 +1502,17 @@ def get_calcHist_params_info():
 def get_calcOpticalFlowFarneback_params_info():
     info = {
         'prev': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'First 8-bit single-channel input image.'
         },
         'next': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 as same as',
             'description': 'Second input image of the same size and the same type as prev 8-bit single-channel.'
         },
         'flow': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Computed flow image that has the same size as prev and type CV_32FC2 2-channel.'
         },
@@ -1554,22 +1554,22 @@ def get_calcOpticalFlowFarneback_params_info():
 def get_calcOpticalFlowPyrLK_params_info():
     info = {
         'prevImg': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'First 8-bit input image or pyramid constructed by buildOpticalFlowPyramid.'
         },
         'nextImg': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Second input image or pyramid of the same size and the same type as prevImg.'
         },
         'prevPts': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Vector of 2D points for which the flow needs to be found; point coordinates must be single-precision floating-point numbers.'
         },
         'nextPts': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Vector of 2D points for which the flow needs to be found; point coordinates must be single-precision floating-point numbers.'
         },
@@ -1583,17 +1583,17 @@ def get_calcOpticalFlowPyrLK_params_info():
 def get_calibrateCamera_params_info():
     info = {
         'objectPoints': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Array of object points in the object coordinate space, 3xN/Nx3 1-channel or 1xN/Nx1 3-channel,'
         },
         'imagePoints': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': ' 2xN/Nx2 1-channel or 1xN/Nx1 2-channel.'
         },
         'imageSize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Size of the image used only to initialize the intrinsic camera matrix.'
         },
@@ -1618,32 +1618,32 @@ def get_calibrateCamera_params_info():
 def get_calibrateCameraExtended_params_info():
     info = {
         'objectPoints': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Array of object points in the calibration pattern coordinate space. The array is of the size 1xN/Nx1 3-channel, where N is the number of points in all views.'
         },
         'imagePoints': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Array of corresponding image points, 2xN/Nx2 1-channel or 1xN/Nx1 2-channel, where N is the number of points in all views.'
         },
         'imageSize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Size of the image used only to initialize the camera intrinsic matrix.'
         },
         'cameraMatrix': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64',
             'description': 'Input/output camera matrix of size 3x3. Initially, it should be an approximation of the camera matrix.'
         },
         'distCoeffs': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64',
             'description': 'Input/output vector of distortion coefficients.'
         },
         'flags': {
-            'format': 'int',
+            'size': 'int',
             'type': 'int',
             'default': '0',
             'description': 'Different flags for the calibration process.'
@@ -1667,29 +1667,29 @@ def get_calibrateCameraExtended_params_info():
 def get_cornerSubPix_params_info():#relateed
     info = {
         'image': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32',
             'description': 'Input 8-bit single-channel, 8-bit or float image.'
         },
         'corners': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Initial coordinates of the input corners and refined coordinates provided for output.'
         },
         'ksize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Half of the side length of the search window. The full search window size will be (winSize*2+1)x(winSize*2+1).'
         },
         'zeroZone': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'default': '(-1, -1)',
             'flag': 'None',
             'description': 'Half of the size of the dead region in the middle of the search zone over which the summation is not done to avoid possible singularities.'
         },
         'criteria': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'default': '(cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 40, 0.001)',
             'flag': 'None',
@@ -1705,7 +1705,7 @@ def get_cornerSubPix_params_info():#relateed
 def get_decolor_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input 8-bit 3-channel color image.'
         },
@@ -1719,7 +1719,7 @@ def get_decolor_params_info():
 def get_dft_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64',
             'description': 'Input array that could be real or complex.'
         },
@@ -1743,12 +1743,12 @@ def get_dft_params_info():
 def get_divide_params_info():
     info = {
         'src1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32, float64, uint8',
             'description': 'First input array or a scalar to be divided by the second input array.'
         },
         'src2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32, float64, uint8 same as src1',
             'description': 'Second input array or a scalar, must have the same size and type as the first input array if the first input is an array.'
         },
@@ -1773,7 +1773,7 @@ def get_divide_params_info():
 def get_drawMatchesKnn_params_info():
     info = {
         'img1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32',
             'description': 'The first source image.'
         },
@@ -1782,7 +1782,7 @@ def get_drawMatchesKnn_params_info():
             'description': 'Keypoints from the first source image.'
         },
         'img2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32 as same as img1',
             'description': 'The second source image.'
         },
@@ -1791,7 +1791,7 @@ def get_drawMatchesKnn_params_info():
             'description': 'Keypoints from the second source image.'
         },
         'color': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Color of the lines to draw matches. If None, colors are drawn randomly.'
         },
@@ -1811,7 +1811,7 @@ def get_drawMatchesKnn_params_info():
 def get_exp_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64',
             'description': 'Input array.'
         },
@@ -1825,7 +1825,7 @@ def get_exp_params_info():
 def get_extractChannel_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32',
             'description': 'Input array.'
         },
@@ -1845,7 +1845,7 @@ def get_extractChannel_params_info():
 def get_filter2D_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input image, 8-bit 3-channel.'
         },
@@ -1856,7 +1856,7 @@ def get_filter2D_params_info():
             'description': 'Desired depth of the destination image.'
         },
         'kernel': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64',
             'description': 'Convolution kernel (or rather a correlation kernel), a single-channel floating point matrix. If you need to apply different kernels to different channels, split the image into separate color planes and process them individually.'
         },
@@ -1870,12 +1870,12 @@ def get_filter2D_params_info():
 def get_gemm_params_info():
     info = {
         'src1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'CV_32FC1, CV_64FC1 (real), CV_32FC2, CV_64FC2 (complex)',
             'description': 'First input matrix to be multiplied, which can be real or complex.'
         },
         'src2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'same as src1',
             'description': 'Second input matrix to be multiplied, of the same type as src1.'
         },
@@ -1884,7 +1884,7 @@ def get_gemm_params_info():
             'description': 'Weight of the matrix product.'
         },
         'src3': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'same as src1',
             'description': 'Third optional delta matrix to be added to the matrix product, of the same type as src1 and src2.'
         },
@@ -1908,7 +1908,7 @@ def get_gemm_params_info():
 def get_getRotationMatrix2D_params_info():
     info = {
         'center': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'float32',
             'description': 'Center of the rotation in the source image. The coordinates are in the format (x, y) and represent the center point around which the image will be rotated.'
         },
@@ -1930,7 +1930,7 @@ def get_getRotationMatrix2D_params_info():
 def get_findContours_params_info():
     info = {
         'image': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Source image, where non-zero pixels are treated as 1’s and zero pixels remain 0’s, thus treated as binary. Can also be a 32-bit integer image of labels if mode is RETR_CCOMP or RETR_FLOODFILL.'
         },
@@ -1956,22 +1956,22 @@ def get_findContours_params_info():
 def get_rectangle_params_info():#bug
     info = {
         'img': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32',
             'description': 'Image on which the rectangle is to be drawn.'
         },
         'pt1': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Vertex of the rectangle. It is a tuple of 2 integers representing the top left corner.'
         },
         'pt2': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Vertex of the rectangle opposite to pt1. It is a tuple of 2 integers representing the bottom right corner.'
         },
         'color': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Rectangle color or brightness (grayscale image). It is a tuple of 3 integers representing the BGR (Blue, Green, Red) color.'
         },
@@ -1991,7 +1991,7 @@ def get_rectangle_params_info():#bug
 def get_cvtColor_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32',
             'description': 'Input image: 8-bit 3-channel, or single-precision floating-point.'
         },
@@ -2011,23 +2011,23 @@ def get_cvtColor_params_info():
 def get_seamlessClone_params_info():#bug
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': '8-bit 3-channel',
             'description': 'Input source image that contains the object you want to insert into the destination image.'
         },
         'dst': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': '8-bit 3-channel',
             'description': 'Input destination image where the source object will be placed.'
         },
         'mask': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float',
             'flag': 'None',
             'description': 'Mask image that defines the region of the source image to be cloned into the destination image. The mask can be a binary mask with non-zero pixels representing the area of the source image to clone.'
         },
         'p': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Point in the destination image where the center of the source object will be placed.'
         },
@@ -2047,7 +2047,7 @@ def get_seamlessClone_params_info():#bug
 def get_drawKeypoints_params_info():
     info = {
         'image': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Source image 8-bit 3-channel on which the keypoints will be drawn.'
         },
@@ -2056,7 +2056,7 @@ def get_drawKeypoints_params_info():
             'description': 'ORB Keypoints detected in the source image. Each keypoint is specified by its 2D position, size, angle, response, octave (pyramid layer), and class_id.'
         },
         'color': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Color of keypoints. If the color is None, keypoints are drawn in random colors.'
         },
@@ -2071,12 +2071,12 @@ def get_drawKeypoints_params_info():
 def get_resize_params_info():#bug
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32 or float64',
             'description': 'Input image.'
         },
         'dsize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Desired size for the output image. If the tuple is zero, the size will be computed from the source image dimensions, the scaling factors fx and fy, and the interpolation method.'
         },
@@ -2105,12 +2105,12 @@ def get_resize_params_info():#bug
 def get_polylines_params_info():
     info = {
         'img': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32',
             'description': 'Image on which the polygonal curves will be drawn.'
         },
         'pts': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int32',
             'description': 'Array of polygonal curves. Each polygonal curve is represented by a numpy.ndarray of points (x, y).'
         },
@@ -2119,7 +2119,7 @@ def get_polylines_params_info():
             'description': 'Flag indicating whether the drawn polylines are closed or not. If True, the function draws a line from the last vertex of each curve to its first vertex.'
         },
         'color': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Color of the polyline edges. For grayscale images, this is a scalar value. For color images, it is a tuple of three values representing BGR (Blue, Green, Red).'
         },
@@ -2148,7 +2148,7 @@ def get_polylines_params_info():
 def get_imread_params_info():
     info = {
         'filename': {
-            'format': 'string',
+            'size': 'string',
             'type': 'str',
             'description': 'Name of the file from which the image is to be loaded.'
         },
@@ -2167,12 +2167,12 @@ def get_imread_params_info():
 def get_matchTemplate_params_info():#Bug
     info = {
         'image': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32',
             'description': 'Image where the search is running. Must be the same data type as templ. 8-bit 3-channel '
         },
         'templ': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32 as same as image',
             'description': 'Searched template; must be not greater than the source image and have the same data type as the image. 8-bit 3-channel '
         },
@@ -2196,7 +2196,7 @@ def get_imshow_params_info():
             'description': 'Name of the window where the image is to be displayed.'
         },
         'mat': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8, float32, float64',
             'description': 'The image to be shown. Pixel value scaling is applied based on the image type:'
                            ' 8-bit images are displayed as is; '
@@ -2214,22 +2214,22 @@ def get_imshow_params_info():
 def get_floodFill_params_info():
     info = {
         'image': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32',
             'description': '8-bit 3-channel Input/output image that will be modified by the function unless the FLOODFILL_MASK_ONLY flag is set.'
         },
         'mask': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Operation mask that must be 2 pixels wider and 2 pixels taller than the image. It is modified to indicate which pixels were filled.'
         },
         'seedPoint': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Starting point for flood filling.'
         },
         'color': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'New value (color or brightness) to assign to the repainted domain pixels.'
         },
@@ -2244,7 +2244,7 @@ def get_floodFill_params_info():
 def get_putText_params_info():
     info = {
         'img': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32 or float64',
             'description': 'The image on which to draw the text.'
         },
@@ -2253,7 +2253,7 @@ def get_putText_params_info():
             'description': 'The text string to be drawn.'
         },
         'org': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'The bottom-left corner of the text string in the image.'
         },
@@ -2266,7 +2266,7 @@ def get_putText_params_info():
             'description': 'The font scale factor that is multiplied by the font-specific base size.'
         },
         'color': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'The color of the text to be drawn. For grayscale images, it is a scalar value. For color images, it is a tuple of 3 values representing the BGR (Blue, Green, Red) colors.'
         },
@@ -2320,7 +2320,7 @@ def get_UMat_context_params_info():
 def get_copyMakeBorder_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32 or float64',
             'description': 'Source image.'
         },
@@ -2347,7 +2347,7 @@ def get_copyMakeBorder_params_info():
             'description': 'Border type. One of cv2.BORDER_CONSTANT, cv2.BORDER_REFLECT, cv2.BORDER_REFLECT_101, cv2.BORDER_REPLICATE, cv2.BORDER_WRAP.'
         },
         'color': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'default': '(0, 0, 0)',
             'description': 'Border value if borderType==BORDER_CONSTANT. It has as many elements as the number of channels in src.'
@@ -2362,17 +2362,17 @@ def get_copyMakeBorder_params_info():
 def get_warpPerspective_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32 or float64',
             'description': 'Input image.'
         },
         'M': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64',
             'description': 'Transformation matrix.'
         },
         'dsize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Size of the output image.'
         },
@@ -2399,27 +2399,27 @@ def get_warpPerspective_params_info():
 def get_projectPoints_params_info():
     info = {
         'objectPoints': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Array of object points in the world coordinate space. 3x3'
         },
         'rvec': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': ' Rotation 1x3 that, along with tvec, performs a change of basis from world to camera coordinate system.'
         },
         'tvec': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '3x3 Translation.'
         },
         'cameraMatrix': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '3x3 Camera intrinsic matrix.'
         },
         'distCoeffs': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'flag': 'None',
             'description': 'Input of vector distortion coefficients. If empty, zero coefficients are assumed.',
@@ -2433,12 +2433,12 @@ def get_projectPoints_params_info():
 def get_getAffineTransform_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Coordinates of triangle vertices in the source image 2x3.'
         },
         'retval': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'The output affine transformation, 2x3 floating-point matrix.'
         },
@@ -2469,17 +2469,17 @@ def get_namedWindow_params_info():
 def get_warpAffine_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64',
             'description': 'Input image to be transformed.'
         },
         'Mat': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64 as same as src',
             'description': '3x2 transformation.'
         },
         'dsize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Size of the output image (width, height).'
         },
@@ -2493,17 +2493,17 @@ def get_warpAffine_params_info():
 def get_fillPoly_params_info():#bug
     info = {
         'img': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Image on which the polygons will be drawn.'
         },
         'points': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int32',
             'description': 'Array of polygons where each polygon is represented as an array of points (x, y).'
         },
         'color': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Polygon color or brightness (grayscale image).'
         },
@@ -2551,7 +2551,7 @@ def get_VideoWriter_fourcc_params_info():
 def get_kmeans_params_info():
     info = {
         'data': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Data for clustering. An array of N-Dimensional with float coordinates.'
         },
@@ -2568,7 +2568,7 @@ def get_kmeans_params_info():
             'description': 'Input/output integer array that stores the cluster indices for every sample.'
         },
         'criteria': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'default': '(cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 10, 1.0)',
             'flag': 'None',
@@ -2609,12 +2609,12 @@ def get_setNumThreads_params_info():
 def get_circle_params_info():#bug
     info = {
         'img': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Image where the circle is to be drawn. This image gets modified in place.'
         },
         'center': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Center of the circle, represented as a tuple of two integers (x, y).'
         },
@@ -2624,7 +2624,7 @@ def get_circle_params_info():#bug
             'description': 'Radius of the circle in pixels.'
         },
         'color': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Circle color. For grayscale images, a single integer. For color images, a tuple of three integers (B, G, R).'
         },
@@ -2655,7 +2655,7 @@ def get_circle_params_info():#bug
 def get_merge_params_info():
     info = {
         'mv': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'Same depth',
             'description': 'Input vector of matrices to be merged. All matrices in mv must have the same size and depth.'
         },
@@ -2670,7 +2670,7 @@ def get_merge_params_info():
 def get_flip_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32',
             'description': 'Input array to be flipped.'
         },
@@ -2688,12 +2688,12 @@ def get_flip_params_info():
 def get_solve_params_info():
     info = {
         'src1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64',
             'description': 'Input matrix on the left-hand side of the system.'
         },
         'src2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64 as same as src1',
             'description': 'Input matrix on the right-hand side of the system.'
         },
@@ -2713,7 +2713,7 @@ def get_solve_params_info():
 def get_solveCubic_params_info():
     info = {
         'coeffs': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'float32',
             'description': '3x1 Equation coefficients, If it is a 4-element vector, it represents the coefficients of x^3, x^2, x, and the constant term, respectively, in the cubic equation coeffs[0]*x^3 + coeffs[1]*x^2 + coeffs[2]*x + coeffs[3] = 0. If it is a 3-element vector, it assumes the coefficient of x^3 is 1 and represents the remaining coefficients of x^2, x, and the constant term, respectively, in the equation x^3 + coeffs[0]*x^2 + coeffs[1]*x + coeffs[2] = 0.'
         },
@@ -2727,7 +2727,7 @@ def get_solveCubic_params_info():
 def get_split_params_info():
     info = {
         'm': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8 or float32 or float64',
             'description': 'Input multi-channel array. It can be an image or any multi-dimensional array where each channel is to be split into separate arrays.'
         },
@@ -2741,7 +2741,7 @@ def get_split_params_info():
 def get_sort_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8 or float32 or float64',
             'description': 'Input single-channel array. This array will be sorted according to the specified flags.'
         },
@@ -2761,7 +2761,7 @@ def get_sort_params_info():
 def get_sortIdx_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8 or float32 or float64',
             'description': 'Input single-channel array. The function will sort the elements of this array based on the specified flags, but instead of rearranging the elements, it will produce an array of indices that correspond to the sorted order.'
         },
@@ -2781,7 +2781,7 @@ def get_sortIdx_params_info():
 def get_spatialGradient_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': '8-bit single-channel Input image. The function calculates the spatial gradient (first-order derivative) of this image in both the x and y directions.'
         },
@@ -2808,7 +2808,7 @@ def get_spatialGradient_params_info():
 def get_sqrt_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8 or float32 or float64',
             'description': 'Input floating-point array. The function calculates the square root of each element in this array. If the array is multi-channel, each channel is processed independently.'
         },
@@ -2822,12 +2822,12 @@ def get_sqrt_params_info():
 def get_stackBlur_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8 or float32',
             'description': 'Input image. The number of channels can be arbitrary, but the depth should be one of CV_8U, CV_16U, CV_16S, or CV_32F.'
         },
         'ksize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Stack-blurring kernel size. If an integer is provided, it is used for both the width and height. The kernel size must be positive and odd. The function supports non-uniform kernel sizes specified by a tuple of two integers (width, height).'
         },
@@ -2841,12 +2841,12 @@ def get_stackBlur_params_info():
 def get_subtract_params_info():
     info = {
         'src1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'First input array or a scalar. When both src1 and src2 are arrays, they must have the same size and number of channels. When one is a scalar, it is subtracted from each element in the array.'
         },
         'src2': {
-            'format': 'numpy.ndarray or scalar',
+            'size': 'numpy.ndarray or scalar',
             'type': 'int8, float32, or float64 as same as src1',
             'description': 'Second input array or a scalar. It should be of the same type and size as src1 if it is an array. If src1 is a scalar and src2 is an array, the scalar is subtracted from each element in src2.'
         },
@@ -2866,7 +2866,7 @@ def get_subtract_params_info():
 def get_trace_params_info():
     info = {
         'mtx': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'Input matrix. The function computes the sum of the diagonal elements of this matrix.'
         },
@@ -2881,12 +2881,12 @@ def get_trace_params_info():
 def get_transform_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'matrix Input array that must have as many channels (1 to 4) as m.cols or m.cols-1. This array represents the elements (e.g., points, colors) to be transformed.'
         },
         'm': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Transformation 2x2 or 2x3 floating-point matrix. The number of rows in the matrix (2) determines the dimensionality of the output vectors, while the number of columns (equal to the number of channels in src or one more) determines how the transformation is applied.'
         },
@@ -2900,7 +2900,7 @@ def get_transform_params_info():
 def get_transpose_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'Input array. The function transposes this matrix, meaning it swaps its rows and columns.'
         },
@@ -2914,7 +2914,7 @@ def get_transpose_params_info():
 def get_vconcat_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'sequence of 8-bit 3-channel Input array or vector of matrices to be concatenated vertically. All of the matrices must have the same number of columns and the same depth.'
         },
@@ -2928,7 +2928,7 @@ def get_vconcat_params_info():
 def get_setIdentity_params_info():
     info = {
         'mtx': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'Matrix to initialize as a scaled identity matrix. The matrix does not need to be square.'
         },
@@ -2942,7 +2942,7 @@ def get_setIdentity_params_info():
 def get_scaleAdd_params_info():
     info = {
         'src1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'First input array. This array is scaled by the factor alpha before addition.'
         },
@@ -2951,7 +2951,7 @@ def get_scaleAdd_params_info():
             'description': 'Scale factor for the first array. Each element of src1 is multiplied by this factor before being added to the corresponding element of src2.'
         },
         'src2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64 as same as src1',
             'description': 'Second input array of the same size and type as src1. The elements of this array are added to the scaled elements of src1.'
         },
@@ -2965,7 +2965,7 @@ def get_scaleAdd_params_info():
 def get_repeat_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'Input array to be replicated.'
         },
@@ -2987,7 +2987,7 @@ def get_repeat_params_info():
 def get_reduce_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'Input 2D matrix. '
         },
@@ -3013,7 +3013,7 @@ def get_reduce_params_info():
 def get_randn_params_info():
     info = {
         'dst': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Output array of random numbers; the array must be pre-allocated and can have from 1 to 4 channels. The function fills this array with normally distributed random numbers, adjusted to fit the value range of the output array data type.'
         },
@@ -3035,7 +3035,7 @@ def get_randn_params_info():
 def get_randu_params_info():
     info = {
         'dst': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Output array of random numbers; the array must be pre-allocated and can have from 1 to 4 channels. The function fills this array with normally distributed random numbers, adjusted to fit the value range of the output array data type.'
         },
@@ -3061,7 +3061,7 @@ def get_randu_params_info():
 def get_pyrUp_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'Input image to be upsampled. The function increases the size of this image, usually by a factor of 2.'
         },
@@ -3075,7 +3075,7 @@ def get_pyrUp_params_info():
 def get_pyrDown_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': '8-bit 3-channel Input image to be downsampled. The function decrease the size of this image, usually by a factor of 2.'
         },
@@ -3090,12 +3090,12 @@ def get_pyrDown_params_info():
 def get_multiply_params_info():
     info = {
         'src1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'First input array. Each element of this array is multiplied by the corresponding element in src2, potentially scaled by the scale factor.'
         },
         'src2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64 as same as src1',
             'description': 'Second input array of the same size and type as src1. Each element of this array is multiplied by the corresponding element in src1, potentially scaled by the scale factor.'
         },
@@ -3109,7 +3109,7 @@ def get_multiply_params_info():
 def get_minMaxLoc_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'Input single-channel array. The function searches for the minimum and maximum element values within this array.'
         },
@@ -3123,7 +3123,7 @@ def get_minMaxLoc_params_info():
 def get_minEnclosingTriangle_params_info():
     info = {
         'points': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input vector of 2D points, which can be stored in a numpy.ndarray or a list. The points can be of depth CV_32S (32-bit integer) or CV_32F (32-bit floating point).'
         },
@@ -3136,7 +3136,7 @@ def get_minEnclosingTriangle_params_info():
 def get_minEnclosingCircle_params_info():
     info = {
         'points': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input vector of 2D points. These points can be stored in a numpy.ndarray or a list and represent the set of points for which the minimal enclosing circle will be found.'
         },
@@ -3149,7 +3149,7 @@ def get_minEnclosingCircle_params_info():
 def get_minAreaRect_params_info():
     info = {
         'points': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input vector of 2D points. These points can be stored in a numpy.ndarray or a list. The function finds the smallest rectangle that encloses all the points in this set. This rectangle can be rotated.'
         },
@@ -3162,12 +3162,12 @@ def get_minAreaRect_params_info():
 def get_min_params_info():
     info = {
         'src1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'First input array. It can be compared with another array or a scalar to find the per-element minimum.'
         },
         'src2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64 as same as src1',
             'description': 'Second input, which can either be an array of the same size and type as src1 or a scalar value. The function computes the minimum of src1 and src2 on an element-by-element basis.'
         },
@@ -3180,12 +3180,12 @@ def get_min_params_info():
 def get_max_params_info():
     info = {
         'src1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'First input array. It can be compared with another array or a scalar to find the per-element minimum.'
         },
         'src2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64 as same as src1',
             'description': 'Second input, which can either be an array of the same size and type as src1 or a scalar value. The function computes the minimum of src1 and src2 on an element-by-element basis.'
         },
@@ -3198,7 +3198,7 @@ def get_max_params_info():
 def get_mean_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'Input array for which the mean value is calculated. The array should have from 1 to 4 channels so that the result can be stored in a Scalar.'
         },
@@ -3212,12 +3212,12 @@ def get_mean_params_info():
 def get_meanShift_params_info():
     info = {
         'probImage': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'Back projection of the object histogram. This is a grayscale image where each pixel denotes how much does the pixels color match the objects color distribution. For better results, the image should be pre-processed to remove noise, such as by using morphological operations.'
         },
         'window': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Initial search window. This is a rectangle defined as (x, y, w, h) where (x, y) is the top-left corner, and (w, h) are the width and height of the rectangle.'
         },
@@ -3238,7 +3238,7 @@ def get_meanShift_params_info():
 def get_meanStdDev_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'Input array for which the mean and standard deviation are calculated. The array should have from 1 to 4 channels so that the results can be stored in Scalars.'
         },
@@ -3252,12 +3252,12 @@ def get_meanStdDev_params_info():
 def get_logPolar_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'Source image to be transformed to semilog-polar coordinates space.'
         },
         'center': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int8',
             'description': 'The transformation center in the source image; where the output precision is maximal. It is a point (x, y) around which the transformation is applied.'
         },
@@ -3280,7 +3280,7 @@ def get_logPolar_params_info():
 def get_log_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'Source image to be transformed to semilog-polar coordinates space.'
         },
@@ -3294,7 +3294,7 @@ def get_log_params_info():
 def get_isContourConvex_params_info():
     info = {
         'contour': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input vector of 2D points representing the contour. These points can be stored in a numpy.ndarray or a list. The contour must be simple, meaning it should not have self-intersections, for the function to determine its convexity accurately.'
         },
@@ -3308,7 +3308,7 @@ def get_isContourConvex_params_info():
 def get_invert_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'Input floating-point M x N matrix to be inverted.'
         },
@@ -3323,12 +3323,12 @@ def get_invert_params_info():
 def get_insertChannel_params_info():
     info = {
         'src1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8, float32, or float64',
             'description': '8-bit single-channel. This array should be of the same size as one channel of the dst array.'
         },
         'src2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8, float32, or float64 as same as src1',
             'description': '8-bit 3-channel'
         },
@@ -3348,7 +3348,7 @@ def get_insertChannel_params_info():
 def get_idct_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'Input floating-point single-channel array. This is the source data for which the inverse DCT is to be calculated.'
         },
@@ -3362,7 +3362,7 @@ def get_idct_params_info():
 def get_hconcat_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'sequence of 8-bit 3-channel Input array or vector of matrices to be concatenated horizontally. All the matrices in `src` must have the same number of rows and the same depth.'
         },
@@ -3376,7 +3376,7 @@ def get_hconcat_params_info():
 def get_hasNonZero_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'Single-channel array to be checked for non-zero elements.'
         },
@@ -3390,7 +3390,7 @@ def get_hasNonZero_params_info():
 def get_getRotationMatrix2D_params_info():
     info = {
         'center': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int8',
             'description': 'Center of the rotation in the source image. This is a point represented as a tuple of two floating-point values (x, y), where (x, y) are the coordinates of the center point around which the image will be rotated.'
         },
@@ -3429,7 +3429,7 @@ def get_getGaussianKernel_params_info():
 def get_flipND_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'Input array. This is the n-dimensional array to be flipped.'
         },
@@ -3449,7 +3449,7 @@ def get_flipND_params_info():
 def get_fitEllipseDirect_params_info():
     info = {
         'points': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input 2D point set. These points can be stored in a numpy.ndarray or a list. The function calculates the best-fitting ellipse for these points.'
         },
@@ -3463,7 +3463,7 @@ def get_fitEllipseDirect_params_info():
 def get_fitEllipseAMS_params_info():
     info = {
         'points': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input 2D point set. These points can be stored in a numpy.ndarray or a list. The function calculates the best-fitting ellipse for these points using the AMS method, which is particularly designed to fit ellipses to data accurately.'
         },
@@ -3477,7 +3477,7 @@ def get_fitEllipseAMS_params_info():
 def get_fitEllipse_params_info():
     info = {
         'points': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input 2D point set. These points can be stored in a numpy.ndarray or a list. The function calculates the best-fitting ellipse for these points by minimizing the sum of the squared distances (in a least-squares sense) from the points to the ellipse’s circumference.'
         },
@@ -3491,7 +3491,7 @@ def get_fitEllipse_params_info():
 def get_findNonZero_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'Single-channel input array, typically a binary image obtained from operations like thresholding, comparisons, etc. The function will find and return the locations of all non-zero pixels in this array.'
         },
@@ -3505,12 +3505,12 @@ def get_findNonZero_params_info():
 def get_fastAtan2_params_info():
     info = {
         'x': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'The x-coordinate of the vector. This represents the horizontal component of the vector for which the angle to the positive x-axis is being calculated.'
         },
         'y': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'The y-coordinate of the vector. This represents the vertical component of the vector for which the angle to the positive x-axis is being calculated.'
         },
@@ -3524,7 +3524,7 @@ def get_fastAtan2_params_info():
 def get_equalizeHist_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Source image. It must be an 8-bit single-channel image, typically a grayscale image.'
         },
@@ -3539,7 +3539,7 @@ def get_equalizeHist_params_info():
 def get_determinant_params_info():
     info = {
         'mtx': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input matrix for which the determinant is to be calculated. The matrix must be of type CV_32FC1 (32-bit floating-point single channel) or CV_64FC1 (64-bit floating-point single channel) and must have a square size (the same number of rows and columns).'
         },
@@ -3553,7 +3553,7 @@ def get_determinant_params_info():
 def get_dct_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input floating-point array. This can be a 1D vector or a 2D matrix, and it represents the data on which the DCT will be applied. The function performs differently based on the dimensionality and flags.'
         },
@@ -3567,7 +3567,7 @@ def get_dct_params_info():
 def get_convertScaleAbs_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'Input array. This array undergoes scaling and absolute value calculation. The function processes each element of the input array independently, applicable to both single-channel and multi-channel arrays.'
         },
@@ -3591,7 +3591,7 @@ def get_convertScaleAbs_params_info():
 def get_convertPointsToHomogeneous_params_info():
     info = {
         'points': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'Input vector of N-dimensional points. This can be a list of points or a numpy.ndarray with points. Each point is represented as a tuple or array of coordinates in Euclidean space.'
         },
@@ -3605,7 +3605,7 @@ def get_convertPointsToHomogeneous_params_info():
 def get_convertPointsFromHomogeneous_params_info():
     info = {
         'points': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'Input vector of N-dimensional points in homogeneous space. This can be a list of points or a numpy.ndarray, where each point is represented as an array of coordinates, including the homogeneous coordinate.'
         },
@@ -3619,7 +3619,7 @@ def get_convertPointsFromHomogeneous_params_info():
 def get_convertFp16_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input array. The function supports converting from FP32 (single precision floating point, CV_32F) to FP16 (half precision floating point, represented as CV_16S) and vice versa. The input array must have a type of CV_32F for conversion to FP16 or CV_16S for conversion back to FP32.'
         },
@@ -3633,7 +3633,7 @@ def get_convertFp16_params_info():
 def get_sumElems_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'Input array for which the sum of elements is calculated. This array must have from 1 to 4 channels, and the function calculates the sum for each channel independently.'
         },
@@ -3647,7 +3647,7 @@ def get_sumElems_params_info():
 def get_preCornerDetect_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32',
             'description': 'Source image. This is a single-channel image, either 8-bit or floating-point. It is the input image for which the feature map for corner detection is calculated.'
         },
@@ -3665,7 +3665,7 @@ def get_preCornerDetect_params_info():
 def get_patchNaNs_params_info():
     info = {
         'a': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input/output matrix of type CV_32F. This matrix is both the input to the function and is modified in-place to replace any NaN values with the specified value.'
         },
@@ -3679,7 +3679,7 @@ def get_patchNaNs_params_info():
 def get_medianBlur_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input image for median blurring. The image can be 1-, 3-, or 4-channel. For ksize of 3 or 5, the image depth should be CV_8U, CV_16U, or CV_32F. For larger aperture sizes, the image depth can only be CV_8U.'
         },
@@ -3697,12 +3697,12 @@ def get_medianBlur_params_info():
 def get_linearPolar_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'Source image to be transformed to polar coordinates. This is the input image for which the polar transformation is applied.'
         },
         'center': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'uint8',
             'description': 'The center of the transformation in the source image; where the output precision is maximal. It is a point around which the transformation is applied.'
         },
@@ -3725,12 +3725,12 @@ def get_linearPolar_params_info():
 def get_illuminationChange_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input image. It must be an 8-bit 3-channel image. This is the image whose illumination is to be changed.'
         },
         'mask': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Mask image. It can be an 8-bit 1 or 3-channel image. The areas of the source image where the illumination change will be applied are specified by the non-zero regions of the mask.'
         },
@@ -3744,12 +3744,12 @@ def get_illuminationChange_params_info():
 def get_compare_params_info():
     info = {
         'src1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'it must have a single channel.'
         },
         'src2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64 as same as src1',
             'description': 'it must also have a single channel'
         },
@@ -3780,22 +3780,22 @@ def get_setLogLevel_params_info():
 def get_seamlessClone_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input 8-bit 3-channel source image from which a region is cloned onto the destination image.'
         },
         'dst': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input 8-bit 3-channel destination image onto which the source image region is cloned.'
         },
         'mask': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input 8-bit 3-channel mask image. The mask defines the region of the source image to be cloned onto the destination image. The non-zero pixels in the mask correspond to the region of the source image that will be cloned.'
         },
         'p': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int8',
             'description': 'Point in the destination image where the center of the source image region (defined by the mask) is placed. This point is specified as a tuple (x, y).'
         },
@@ -3814,17 +3814,17 @@ def get_seamlessClone_params_info():
 def get_sampsonDistance_params_info():
     info = {
         'pt1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64',
             'description': 'First homogeneous 2D point, typically represented as a 3-element vector [x, y, 1] in homogeneous coordinates.'
         },
         'pt2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64 as same as pt1',
             'description': 'Second homogeneous 2D point. 3-element vector [x, y, 1] as a 3-element vector [x, y, 1].'
         },
         'F': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64',
             'description': 'The fundamental 3x3 matrix relating are drawn. The fundamental matrix can be computed using functions like cv2.findFundamentalMat.'
         },
@@ -3838,12 +3838,12 @@ def get_sampsonDistance_params_info():
 def get_rotatedRectangleIntersection_params_info():
     info = {
         'rect1': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int8',
             'description': 'First rotated rectangle. This is specified as a RotatedRect object, which includes the center point, size, and the angle of rotation.'
         },
         'rect2': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int8',
             'description': 'Second rotated rectangle, also specified as a RotatedRect object. Similar to the first rectangle, it includes the center, size, and angle of rotation.'
         },
@@ -3857,7 +3857,7 @@ def get_rotatedRectangleIntersection_params_info():
 def get_rotate_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'Input array to be rotated. This can be an image or any 2D array.'
         },
@@ -3876,7 +3876,7 @@ def get_rotate_params_info():
 def get_randShuffle_params_info():
     info = {
         'dst': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'The input/output numerical 1D array that is to be shuffled. The array is modified in-place, meaning that the shuffling effect is applied directly to this array.'
         },
@@ -3890,7 +3890,7 @@ def get_randShuffle_params_info():
 def get_pow_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input array. Each element of this array will be raised to the specified power. The array can be of any numerical type.'
         },
@@ -3908,12 +3908,12 @@ def get_pow_params_info():
 def get_perspectiveTransform_params_info():
     info = {
         'ptx': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '1xNx2 array Input two-channel or three-channeion. The array should be of a floating-point type.'
         },
         'm': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '3x3 matrix for transforming 3D vectors. The matrix should be of a floating-point type.'
         },
@@ -3927,7 +3927,7 @@ def get_perspectiveTransform_params_info():
 def get_pencilSketch_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input image. It must be an 8-bit 3-channel image. This is the image that will be processed to generate a pencil sketch effect.'
         },
@@ -3941,12 +3941,12 @@ def get_pencilSketch_params_info():
 def get_watershed_params_info():
     info = {
         'image': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input image for segmentation. It must be an 8-bit 3-channel image. The function applies a watershed algorithm to this image based on the provided markers.'
         },
         'makers': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int32',
             'description': 'Input image for segmentation. It must be an 8-bit single-channel image. The function applies a watershed algorithm to this image based on the provided markers.'
         },
@@ -3960,19 +3960,19 @@ def get_watershed_params_info():
 def get_warpPolar_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int8, float32, or float64',
             'description': 'Source image to be transformed. It can be of any type and number of channels.'
         },
         'dsize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int8',
             'default': '(200,200)',
             'flag': 'None',
             'description': 'The destination image size in the format (width, height). Depending on the values, the area and dimensions of the destination image will adapt accordingly.'
         },
         'center': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int8',
             'description': 'The transformation center point in the source image. It determines the origin of the polar coordinate system.'
         },
@@ -3997,7 +3997,7 @@ def get_warpPolar_params_info():
 def get_threshold_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32',
             'description': 'Input array (8-bit single-channel or 32-bit floating point). This is the source image that will be thresholded.'
         },
@@ -4028,7 +4028,7 @@ def get_threshold_params_info():
 def get_stylization_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input image. It must be an 8-bit 3-channel image. This is the image that will be processed to achieve a stylized effect.'
         },
@@ -4042,7 +4042,7 @@ def get_stylization_params_info():
 def get_solvePoly_params_info():
     info = {
         'coeffs': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64',
             'description': '1xN/Nx1 2-channel Array of polynomial coefficients. The coefficients are in decreasing powers, where coeffs[0] is the coefficient of the highest power and coeffs[n] is the constant term.'
         },
@@ -4056,38 +4056,38 @@ def get_solvePoly_params_info():
 def get_solvePnPRefineVVS_params_info():
     info = {
         'objectPoints': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '1xN/Nx1 3-channel'
         },
         'imagePoints': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 as same as ',
             'description': '1xN/Nx1 2-channel'
         },
         'cameraMatrix': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input camera intrinsic matrix. This matrix includes the focal lengths and the optical centers and is used to project 3D points to the image plane.'
         },
         'distCoeffs': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'flag': 'None',
             'description': 'Input of vector distortion coefficients. If empty, zero coefficients are assumed.',
         },
         'rvec': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '3x1'
         },
         'tvec': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '3x1'
         },
         'criteria': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'uint8',
             'default': '(cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 30, 1e-6)',
             'flag': 'None',
@@ -4103,38 +4103,38 @@ def get_solvePnPRefineVVS_params_info():
 def get_solvePnPRefineLM_params_info():
     info = {
         'objectPoints': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '1xN/Nx1 3-channel'
         },
         'imagePoints': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 as same as ',
             'description': '1xN/Nx1 2-channel'
         },
         'cameraMatrix': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input camera intrinsic matrix. This matrix includes the focal lengths and the optical centers and is used to project 3D points to the image plane.'
         },
         'distCoeffs': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'flag': 'None',
             'description': 'Input of vector distortion coefficients. If empty, zero coefficients are assumed.',
         },
         'rvec': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '3x1'
         },
         'tvec': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '3x1'
         },
         'criteria': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'uint8',
             'default': '(cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 30, 1e-6)',
             'flag': 'None',
@@ -4150,22 +4150,22 @@ def get_solvePnPRefineLM_params_info():
 def get_solvePnPRansac_params_info():
     info = {
         'objectPoints': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '1xN/Nx1 3-channel'
         },
         'imagePoints': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 as same as ',
             'description': '1xN/Nx1 2-channel'
         },
         'cameraMatrix': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input camera intrinsic matrix. This matrix includes the focal lengths and the optical centers and is used to project 3D points to the image plane.'
         },
         'distCoeffs': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'flag': 'None',
             'description': 'Input of vector distortion coefficients. If empty, zero coefficients are assumed.',
@@ -4180,22 +4180,22 @@ def get_solvePnPRansac_params_info():
 def get_solvePnPGeneric_params_info():
     info = {
         'objectPoints': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '1xN/Nx1 3-channel'
         },
         'imagePoints': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 as same as ',
             'description': '1xN/Nx1 2-channel'
         },
         'cameraMatrix': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input camera intrinsic matrix. This matrix includes the focal lengths and the optical centers and is used to project 3D points to the image plane.'
         },
         'distCoeffs': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'flag': 'None',
             'description': 'Input of vector distortion coefficients. If empty, zero coefficients are assumed.',
@@ -4210,22 +4210,22 @@ def get_solvePnPGeneric_params_info():
 def get_solvePnP_params_info():
     info = {
         'objectPoints': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '1xN/Nx1 3-channel'
         },
         'imagePoints': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 as same as ',
             'description': '1xN/Nx1 2-channel'
         },
         'cameraMatrix': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input camera intrinsic matrix. This matrix includes the focal lengths and the optical centers and is used to project 3D points to the image plane.'
         },
         'distCoeffs': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'flag': 'None',
             'description': 'Input of vector distortion coefficients. If empty, zero coefficients are assumed.',
@@ -4240,7 +4240,7 @@ def get_solvePnP_params_info():
 def get_boxFilter_params_info():#bug
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32',
             'description': 'Input image to be blurred.'
         },
@@ -4251,7 +4251,7 @@ def get_boxFilter_params_info():#bug
             'description': 'The desired depth of the output image. Use -1 to use the same depth as the source image.'
         },
         'ksize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Size of the blurring kernel. Specified as a tuple (width, height).'
         },
@@ -4265,12 +4265,12 @@ def get_boxFilter_params_info():#bug
 def get_broadcast_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int32',
             'description': 'Input array to be broadcasted.'
         },
         'shape': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int32',
             'description': '2x1 shape'
         },
@@ -4284,17 +4284,17 @@ def get_broadcast_params_info():
 def get_calibrateCameraRO_params_info():
     info = {
         'objectPoints': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '1xN/Nx1 3-channel'
         },
         'imagePoints': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 as same as ',
             'description': '1xN/Nx1 2-channel'
         },
         'imageSize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Size of the image used only to initialize the intrinsic camera matrix.'
         },
@@ -4305,24 +4305,24 @@ def get_calibrateCameraRO_params_info():
             'description': 'Specifies which one of the object points is fixed. If you are using a symmetric pattern like a checkerboard, the function uses some of the detected feature points as fixed points. This parameter is the index of the fixed point in the objectPoints array.'
         },
         'cameraMatrix': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input camera intrinsic matrix. This matrix includes the focal lengths and the optical centers and is used to project 3D points to the image plane.'
         },
         'distCoeffs': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'flag': 'None',
             'description': 'Input of vector distortion coefficients. If empty, zero coefficients are assumed.',
         },
         'rvecs': {
-            'format': 'None',
+            'size': 'None',
             'type': 'float32',
             'flag': 'None',
             'description': 'Input camera intrinsic matrix. This matrix includes the focal lengths and the optical centers and is used to project 3D points to the image plane.'
         },
         'tvecs': {
-            'format': 'None',
+            'size': 'None',
             'type': 'float32',
             'flag': 'None',
             'description': 'Input of vector distortion coefficients. If empty, zero coefficients are assumed.',
@@ -4338,17 +4338,17 @@ def get_calibrateCameraRO_params_info():
 def get_calibrateCameraROExtended_params_info():
     info = {
         'objectPoints': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '1xN/Nx1 3-channel'
         },
         'imagePoints': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 as same as ',
             'description': '1xN/Nx1 2-channel'
         },
         'imageSize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Size of the image used only to initialize the intrinsic camera matrix.'
         },
@@ -4359,24 +4359,24 @@ def get_calibrateCameraROExtended_params_info():
             'description': 'Specifies which one of the object points is fixed. If you are using a symmetric pattern like a checkerboard, the function uses some of the detected feature points as fixed points. This parameter is the index of the fixed point in the objectPoints array.'
         },
         'cameraMatrix': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input camera intrinsic matrix. This matrix includes the focal lengths and the optical centers and is used to project 3D points to the image plane.'
         },
         'distCoeffs': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'flag': 'None',
             'description': 'Input of vector distortion coefficients. If empty, zero coefficients are assumed.',
         },
         'rvecs': {
-            'format': 'None',
+            'size': 'None',
             'type': 'float32',
             'flag': 'None',
             'description': 'Input camera intrinsic matrix. This matrix includes the focal lengths and the optical centers and is used to project 3D points to the image plane.'
         },
         'tvecs': {
-            'format': 'None',
+            'size': 'None',
             'type': 'float32',
             'flag': 'None',
             'description': 'Input of vector distortion coefficients. If empty, zero coefficients are assumed.',
@@ -4388,7 +4388,7 @@ def get_calibrateCameraROExtended_params_info():
             'description': 'Different operation flags that can be zero or a combination of the following values: cv2.CALIB_USE_INTRINSIC_GUESS, cv2.CALIB_FIX_ASPECT_RATIO, cv2.CALIB_FIX_PRINCIPAL_POINT, etc.'
         },
         'criteria': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'default': '(cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 30, 1e-6)',
             'flag': 'None',
@@ -4404,22 +4404,22 @@ def get_calibrateCameraROExtended_params_info():
 def get_calibrateHandEye_params_info():
     info = {
         'R_gripper2base': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Array containing rotation matrices (3x3) or rotation vectors (3x1) for the transformations from the gripper frame to the robot base frame.'
         },
         't_gripper2base': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '3x1) for the transformations from the gripper frame to the robot base frame.'
         },
         'R_target2cam': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Array containing rotation matrices (3x3) or rotation vectors (3x1) for the transformations from the calibration target frame to the camera frame.'
         },
         't_target2cam': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '3x1) for the transformations from the calibration target frame to the camera frame.'
         },
@@ -4440,22 +4440,22 @@ def get_calibrateHandEye_params_info():
 def get_calibrateRobotWorldHandEye_params_info():
     info = {
         'R_world2cam': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Array containing rotation matrices (3x3) or rotation vectors (3x1) for the transformations from the world frame to the camera frame.'
         },
         't_world2cam': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Array containing translation vectors (3x1) for the transformations from the world frame to the camera frame.'
         },
         'R_base2gripper': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Array containing rotation matrices (3x3) or rotation vectors (3x1) for the transformations from the robot base frame to the gripper frame.'
         },
         't_base2gripper': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Array containing translation vectors (3x1) for the transformations from the robot base frame to the gripper frame.'
         },
@@ -4475,12 +4475,12 @@ def get_calibrateRobotWorldHandEye_params_info():
 def get_calibrationMatrixValues_params_info():
     info = {
         'cameraMatrix': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input camera intrinsic matrix. This matrix includes the focal lengths and the optical centers. It can be estimated by calibrateCamera or stereoCalibrate.'
         },
         'imageSize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Input image size in pixels. It is used to initialize intrinsic camera matrix.'
         },
@@ -4502,22 +4502,22 @@ def get_calibrationMatrixValues_params_info():
 def get_cartToPolar_params_info():
     info = {
         'x': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64',
             'description': 'Input array of x-coordinates. Must be a single or double-precision floating-point array.'
         },
         'y': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64 as same as x',
             'description': 'Input array of y-coordinates. Must have the same size and type as the x array.'
         },
         'magnitude': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64 as same as x',
             'description': 'Output array of magnitudes. It will have the same size and type as the input arrays.'
         },
         'angle': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64 as same as x',
             'description': 'Output array of angles. It will have the same size and type as the input arrays. The angles are measured in radians by default or in degrees if angleInDegrees is True.'
         },
@@ -4536,12 +4536,12 @@ def get_cartToPolar_params_info():
 def get_checkChessboard_params_info():
     info = {
         'img': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': '8-bit single-channel'
         },
         'size': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Size of the chessboard pattern, indicating the number of inner corners per a chessboard row and column (width, height).'
         },
@@ -4569,7 +4569,7 @@ def get_checkHardwareSupport_params_info():
 def get_checkRange_params_info():
     info = {
         'a': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64',
             'description': 'Input array to be checked.'
         },
@@ -4600,17 +4600,17 @@ def get_checkRange_params_info():
 def get_clipLine_params_info():
     info = {
         'imgRect': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'The rectangle representing the image boundaries. It should be specified as a tuple (x, y, width, height), where (x, y) is the top-left corner, and width and height are the dimensions of the rectangle.'
         },
         'pt1': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'uint8',
             'description': 'The first point of the line segment. Specified as a tuple (x1, y1).'
         },
         'pt2': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'uint8',
             'description': 'The second point of the line segment. Specified as a tuple (x2, y2).'
         },
@@ -4625,12 +4625,12 @@ def get_clipLine_params_info():
 def get_colorChange_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input image. Must be an 8-bit 3-channel image.'
         },
         'mask': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 as same as src',
             'description': 'Mask image. Can be an 8-bit 1-channel or 3-channel image. The mask specifies the area which will be affected by the color change.'
         },
@@ -4662,12 +4662,12 @@ def get_colorChange_params_info():
 def get_compareHist_params_info():
     info = {
         'H1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'First histogram to compare. Must be of the same size and type as H2.'
         },
         'H2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 as same as H1',
             'description': 'Second histogram to compare. Must be of the same size and type as H1.'
         },
@@ -4686,22 +4686,22 @@ def get_compareHist_params_info():
 def get_composeRT_params_info():
     info = {
         'rvec1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64',
             'description': '3x1 The first rotation vector.'
         },
         'tvec1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64 as same as',
             'description': '3x1 The first translation vector.'
         },
         'rvec2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64 as same as',
             'description': '3x1 The second rotation vector.'
         },
         'tvec2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64 as same as',
             'description': '3x1 The second translation vector.'
         },
@@ -4715,7 +4715,7 @@ def get_composeRT_params_info():
 def get_computeCorrespondEpilines_params_info():
     info = {
         'points': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input points. Matrix of type CV_32FC2 or a vector of Point2f. Represents either points in the first image or points in the second image.'
         },
@@ -4726,7 +4726,7 @@ def get_computeCorrespondEpilines_params_info():
             'description': 'Index of the image (1 or 2) that contains the points. This parameter specifies whether the input points are from the first or the second image of the stereo pair.'
         },
         'F': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64',
             'description': 'Fundamental matrix that can be estimated using findFundamentalMat or stereoRectify.'
         },
@@ -4740,12 +4740,12 @@ def get_computeCorrespondEpilines_params_info():
 def get_computeECC_params_info():
     info = {
         'templateImage': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': '8-bit single-channel'
         },
         'inputImage': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': '8-bit single-channel'
         },
@@ -4759,7 +4759,7 @@ def get_computeECC_params_info():
 def get_connectedComponents_params_info():
     info = {
         'image': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'The 8-bit single-channel image to be labeled.'
         },
@@ -4785,7 +4785,7 @@ def get_connectedComponents_params_info():
 def get_connectedComponentsWithAlgorithm_params_info():
     info = {
         'image': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'The 8-bit single-channel image to be labeled.'
         },
@@ -4817,7 +4817,7 @@ def get_connectedComponentsWithAlgorithm_params_info():
 def get_connectedComponentsWithStats_params_info():
     info = {
         'image': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'The 8-bit single-channel image to be labeled.'
         },
@@ -4843,7 +4843,7 @@ def get_connectedComponentsWithStats_params_info():
 def get_connectedComponentsWithStatsWithAlgorithm_params_info():
     info = {
         'image': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'The 8-bit single-channel image to be labeled.'
         },
@@ -4875,7 +4875,7 @@ def get_connectedComponentsWithStatsWithAlgorithm_params_info():
 def get_contourArea_params_info():
     info = {
         'contour': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input vector of 2D points (contour vertices), which can be stored in a numpy.ndarray. The contour points should be passed in a shape of (n, 1, 2) for n points, or a simpler (n, 2) shape.'
         },
@@ -4894,7 +4894,7 @@ def get_contourArea_params_info():
 def get_convertFp16_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input array. For forward conversion, the type should be float32 (CV_32F), representing single precision floating points. For backward conversion, the type should be int16 (CV_16S), representing half precision floating points stored in a 16-bit format.'
         },
@@ -4908,12 +4908,12 @@ def get_convertFp16_params_info():
 def get_convertMaps_params_info():
     info = {
         'map1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'The first input map. It can be of type CV_16SC2, CV_32FC1, or CV_32FC2.'
         },
         'map2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'The second input map. It is of type CV_16UC1 for CV_16SC2 map1 type, CV_32FC1 for CV_32FC1 map1 type, or none (empty matrix) for CV_32FC2 map1 type.'
         },
@@ -4938,7 +4938,7 @@ def get_convertMaps_params_info():
 def get_convertPointsFromHomogeneous_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64',
             'description': '1xN/Nx1 3-channel'
         },
@@ -4952,7 +4952,7 @@ def get_convertPointsFromHomogeneous_params_info():
 def get_convertPointsToHomogeneous_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64',
             'description': '1xN/Nx1 3-channel'
         },
@@ -4966,7 +4966,7 @@ def get_convertPointsToHomogeneous_params_info():
 def get_convertScaleAbs_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64',
             'description': 'Input array that can be of any depth.'
         },
@@ -4990,7 +4990,7 @@ def get_convertScaleAbs_params_info():
 def get_convexHull_params_info():
     info = {
         'points': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input 2D point set, stored in a numpy array of shape (N, 2), where N is the number of points.'
         },
@@ -5014,7 +5014,7 @@ def get_convexHull_params_info():
 def get_copyMakeBorder_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32',
             'description': 'Source image, a numpy array of any depth.'
         },
@@ -5040,7 +5040,7 @@ def get_copyMakeBorder_params_info():
             'description': 'Flag representing the border type. Can be cv2.BORDER_CONSTANT, cv2.BORDER_REFLECT, cv2.BORDER_WRAP, etc.'
         },
         'value': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'default': '(0, 0, 0)',
             'flag': 'None',
@@ -5056,12 +5056,12 @@ def get_copyMakeBorder_params_info():
 def get_copyTo_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Source image, a numpy array of any depth.'
         },
         'mask': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 as same as',
             'description': 'Source image, a numpy array of any depth.'
         },
@@ -5075,7 +5075,7 @@ def get_copyTo_params_info():
 def get_cornerEigenValsAndVecs_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input 8-bit single-channel image, either or floating-point.'
         },
@@ -5102,7 +5102,7 @@ def get_cornerEigenValsAndVecs_params_info():
 def get_cornerHarris_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input 8-bit single-channel image, either or floating-point.'
         },
@@ -5133,7 +5133,7 @@ def get_cornerHarris_params_info():
 def get_cornerMinEigenVal_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input 8-bit single-channel image, either or floating-point.'
         },
@@ -5161,17 +5161,17 @@ def get_cornerMinEigenVal_params_info():
 def get_correctMatches_params_info():
     info = {
         'F': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64',
             'description': '3x3 fundamental matrix.'
         },
         'p1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64',
             'description': '2x3 array containing the first set of points.'
         },
         'p2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64 as same as',
             'description': '2x3 array containing the second set of points.'
         },
@@ -5186,7 +5186,7 @@ def get_correctMatches_params_info():
 def get_countNonZero_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': '8-bit single-channel array.'
         },
@@ -5213,12 +5213,12 @@ def get_cubeRoot_params_info():
 def get_cvtColorTwoPlane_params_info():
     info = {
         'src1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': '8-bit image of the Y plane.'
         },
         'uv_plane': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': '2-channel Image containing interleaved U/V plane.'
         },
@@ -5238,7 +5238,7 @@ def get_cvtColorTwoPlane_params_info():
 def get_dct_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64',
             'description': 'Input floating-point array. Can be 1D or 2D.'
         },
@@ -5258,7 +5258,7 @@ def get_dct_params_info():
 def get_decomposeEssentialMat_params_info():
     info = {
         'E': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64',
             'description': 'The input essential matrix, a 3x3 numpy.ndarray.'
         },
@@ -5272,12 +5272,12 @@ def get_decomposeEssentialMat_params_info():
 def get_decomposeHomographyMat_params_info():
     info = {
         'H': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64',
             'description': 'The input homography matrix, a 3x3 numpy.ndarray, between two images.'
         },
         'K': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64',
             'description': 'The camera intrinsic matrix, a 3x3 numpy.ndarray.'
         },
@@ -5291,7 +5291,7 @@ def get_decomposeHomographyMat_params_info():
 def get_decomposeProjectionMatrix_params_info():
     info = {
         'projMatrix': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64',
             'description': '4x3 matrix P.'
         },
@@ -5305,7 +5305,7 @@ def get_decomposeProjectionMatrix_params_info():
 def get_demosaicing_params_info():
     info = {
         'probImage': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': '8-bit single-channel'
         },
@@ -5325,7 +5325,7 @@ def get_demosaicing_params_info():
 def get_detailEnhance_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input 8-bit 3-channel image.'
         },
@@ -5351,7 +5351,7 @@ def get_detailEnhance_params_info():
 def get_dft_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64',
             'description': 'Input array that could be real or complex.'
         },
@@ -5371,7 +5371,7 @@ def get_dft_params_info():
 def get_distanceTransform_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': '8-bit single-channel (binary) source image.'
         },
@@ -5395,7 +5395,7 @@ def get_distanceTransform_params_info():
 def get_distanceTransformWithLabels_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': '8-bit single-channel (binary) source image.'
         },
@@ -5417,12 +5417,12 @@ def get_distanceTransformWithLabels_params_info():
 def get_divSpectrums_params_info():
     info = {
         'a': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'First input array, result of a real or complex Fourier transform.'
         },
         'b': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 as same as a',
             'description': 'Second input array, should be of the same size and type as the first.'
         },
@@ -5447,7 +5447,7 @@ def get_divSpectrums_params_info():
 def get_edgePreservingFilter_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8, 3-channel',
             'description': 'Input 8-bit 3-channel image.'
         },
@@ -5477,7 +5477,7 @@ def get_edgePreservingFilter_params_info():
 def get_eigen_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64',
             'description': 'Input symmetric square matrix.'
         },
@@ -5491,7 +5491,7 @@ def get_eigen_params_info():
 def get_eigenNonSymmetric_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64',
             'description': 'Input non-symmetric square matrix.'
         },
@@ -5505,17 +5505,17 @@ def get_eigenNonSymmetric_params_info():
 def get_ellipse_params_info():
     info = {
         'img': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32 or float64',
             'description': 'Image on which the ellipse is drawn.'
         },
         'center': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Center of the ellipse (x, y).'
         },
         'axes': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Half of the size of the ellipse main axes.'
         },
@@ -5536,7 +5536,7 @@ def get_ellipse_params_info():
             'description': 'Ending angle of the elliptic arc in degrees.'
         },
         'color': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Ellipse color (B, G, R).'
         },
@@ -5556,12 +5556,12 @@ def get_ellipse_params_info():
 def get_ellipse2Poly_params_info():
     info = {
         'center': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Center of the arc (x, y).'
         },
         'axes': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Half of the size of the ellipse main axes (major axis length, minor axis length).'
         },
@@ -5597,7 +5597,7 @@ def get_ellipse2Poly_params_info():
 def get_equalizeHist_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Source 8-bit single-channel image.'
         },
@@ -5611,12 +5611,12 @@ def get_equalizeHist_params_info():
 def get_estimateAffine2D_params_info():
     info = {
         'from_': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'First input 2D point set containing (X,Y).'
         },
         'to': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 as samae as',
             'description': 'Second input 2D point set containing (x,y).'
         },
@@ -5636,12 +5636,12 @@ def get_estimateAffine2D_params_info():
 def get_estimateAffine3D_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '1xN/Nx1 3-channel (X,Y,Z).'
         },
         'dst': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '1xN/Nx1 3-channel (X,Y,Z).'
         },
@@ -5655,7 +5655,7 @@ def get_estimateAffine3D_params_info():
 def get_fastNlMeansDenoising_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input 1-channel, 2-channel, 3-channel, or 4-channel image'
         },
@@ -5685,7 +5685,7 @@ def get_fastNlMeansDenoising_params_info():
 def get_fastNlMeansDenoisingColored_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input 8-bit 3-channel image.'
         },
@@ -5720,7 +5720,7 @@ def get_fastNlMeansDenoisingColored_params_info():
 def get_fastNlMeansDenoisingColoredMulti_params_info():
     info = {
         'srcImgs': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input sequence of 8-bit 3-channel images. All images should have the same type and size.'
         },
@@ -5753,7 +5753,7 @@ def get_fastNlMeansDenoisingColoredMulti_params_info():
 def get_fastNlMeansDenoisingMulti_params_info():
     info = {
         'srcImgs': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'sequence of 8-bit 1-channel'
         },
@@ -5785,17 +5785,17 @@ def get_fastNlMeansDenoisingMulti_params_info():
 def get_fillConvexPoly_params_info():
     info = {
         'img': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32',
             'description': 'Input/output image.'
         },
         'points': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int32',
             'description': 'Array of polygon vertices.'
         },
         'color': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'uint8',
             'description': 'Polygon color.'
         },
@@ -5809,17 +5809,17 @@ def get_fillConvexPoly_params_info():
 def get_find4QuadCornerSubpix_params_info():
     info = {
         'img': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input image. It must be 8-bit single-channel.'
         },
         'cc': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '2x2'
         },
         'ksize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Half of the side length of the search window. For example, if region_size=(5,5), then a 11x11 search window is used.'
         },
@@ -5833,7 +5833,7 @@ def get_find4QuadCornerSubpix_params_info():
 def get_filterSpeckles_params_info():
     info = {
         'img': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'The input 16-bit signed disparity image.'
         },
@@ -5861,12 +5861,12 @@ def get_filterSpeckles_params_info():
 def get_findChessboardCorners_params_info():
     info = {
         'image': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Source chessboard view. It must be an 8-bit single-channel or color image.'
         },
         'patternSize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Number of inner corners per a chessboard row and column (patternSize = cv::Size(points_per_row,points_per_column) = cv::Size(columns,rows)).'
         },
@@ -5885,12 +5885,12 @@ def get_findChessboardCorners_params_info():
 def get_findChessboardCornersSB_params_info():
     info = {
         'image': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Source chessboard view. It must be an 8-bit single-channel or color image.'
         },
         'patternSize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Number of inner corners per a chessboard row and column (patternSize = cv::Size(points_per_row,points_per_column) = cv::Size(columns,rows)).'
         },
@@ -5909,12 +5909,12 @@ def get_findChessboardCornersSB_params_info():
 def get_findChessboardCornersSBWithMeta_params_info():
     info = {
         'image': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Source chessboard view. It must be an 8-bit single-channel or color image.'
         },
         'patternSize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'default': '(3,3)',
             'flag':'None',
@@ -5935,12 +5935,12 @@ def get_findChessboardCornersSBWithMeta_params_info():
 def get_findCirclesGrid_params_info():
     info = {
         'image': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Grid view of input circles; it must be an 8-bit grayscale or color image.'
         },
         'patternSize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Number of circles per row and column (patternSize = Size(points_per_row, points_per_column)).'
         },
@@ -5960,7 +5960,7 @@ def get_findCirclesGrid_params_info():
 def get_findContours_params_info():
     info = {
         'image': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Source, an 8-bit single-channel image. Non-zero pixels are treated as 1s. Zero pixels remain 0s, treated as binary. Can also be a 32-bit integer image of labels (CV_32SC1) if mode is RETR_CCOMP or RETR_FLOODFILL.'
         },
@@ -5985,17 +5985,17 @@ def get_findContours_params_info():
 def get_findEssentialMat_params_info():
     info = {
         'points1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 | float64',
             'description': 'Array of N (N >= 5) 2D points from the first image. The point coordinates should be floating-point.'
         },
         'points2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 | float64 as same as',
             'description': '2D points Array of the second image points of the same size and format as points1.'
         },
         'cameraMatrix': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 | float64 as same as',
             'description': 'Camera intrinsic matrix.'
         },
@@ -6028,12 +6028,12 @@ def get_findEssentialMat_params_info():
 def get_findFundamentalMat_params_info():
     info = {
         'points1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 | float64',
             'description': 'Array of N (N >= 5) 2D points from the first image. The point coordinates should be floating-point.'
         },
         'points2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 | float64 as same as',
             'description': '2D points Array of the second image points of the same size and format as points1.'
         },
@@ -6066,12 +6066,12 @@ def get_findFundamentalMat_params_info():
 def get_findHomography_params_info():
     info = {
         'points1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Array of N (N >= 5) 2D points from the first image. The point coordinates should be floating-point.'
         },
         'points2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 as same as',
             'description': '2D points Array of the second image points of the same size and format as points1.'
         },
@@ -6085,17 +6085,17 @@ def get_findHomography_params_info():
 def get_findTransformECC_params_info():#bug
     info = {
         'templateImage': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 ',
             'description': '8-bit single-channel template image.'
         },
         'inputImage': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': '8-bit single-channel input image which should be warped with the final warpMatrix in order to provide an image similar to templateImage.'
         },
         'cameraMatrix': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'flaot32',
             'description': 'warp_matrix 2x3.'
         },
@@ -6106,7 +6106,7 @@ def get_findTransformECC_params_info():#bug
             'description': 'Specifies the type of motion: MOTION_TRANSLATION, MOTION_EUCLIDEAN, MOTION_AFFINE, or MOTION_HOMOGRAPHY.'
         },
         'criteria': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'default': '(cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 10000, 1e-5)',
             'flag': 'None',
@@ -6122,7 +6122,7 @@ def get_findTransformECC_params_info():#bug
 def get_fitLine_params_info():
     info = {
         'points': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 ',
             'description': 'Input vector of 2D or 3D points.'
         },
@@ -6156,7 +6156,7 @@ def get_fitLine_params_info():
 def get_goodFeaturesToTrack_params_info():
     info = {
         'image': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input 8-bit single-channel image.'
         },
@@ -6186,7 +6186,7 @@ def get_goodFeaturesToTrack_params_info():
 def get_goodFeaturesToTrackWithQuality_params_info():
     info = {
         'image': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input 8-bit single-channel image.'
         },
@@ -6203,7 +6203,7 @@ def get_goodFeaturesToTrackWithQuality_params_info():
             'description': 'Minimum possible Euclidean distance between the returned corners.'
         },
         'mask': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': '8-bit single-channel image'
         },
@@ -6221,28 +6221,28 @@ def get_goodFeaturesToTrackWithQuality_params_info():
 def get_grabCut_params_info():
     info = {
         'img': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input 8-bit 3-channel image.'
         },
         'mask': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input/output 8-bit single-channel mask. Initialized by the function when mode is GC_INIT_WITH_RECT. Elements may have one of GrabCutClasses.'
         },
         'imgRect': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'uint8',
             'description': 'ROI containing a segmented object. Pixels outside the ROI are marked as "obvious background". Used only when mode==GC_INIT_WITH_RECT.'
         },
         'bgdModel': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64',
             'flag': 'None',
             'description': '1x13 Temporary array for the background model. Do not modify it while processing the same image.'
         },
         'fgdModel': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64',
             'flag': 'None',
             'description': '1x13 Temporary array for the foreground model. Do not modify it while processing the same image.'
@@ -6269,7 +6269,7 @@ def get_grabCut_params_info():
 def get_groupRectangles_params_info():
     info = {
         'rectList': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': '3x4 matrix Input/output vector of rectangles. Input rectangles and returns the ones that passed the grouping.'
         },
@@ -6293,7 +6293,7 @@ def get_groupRectangles_params_info():
 def get_idft_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input array that could be real or complex.'
         },
@@ -6307,7 +6307,7 @@ def get_idft_params_info():
 def get_imdecode_params_info():
     info = {
         'buf': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input array or vector of bytes.'
         },
@@ -6325,7 +6325,7 @@ def get_imdecode_params_info():
 def get_imdecodemulti_params_info():
     info = {
         'buf': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input array or vector of bytes.'
         },
@@ -6347,7 +6347,7 @@ def get_imencode_params_info():
             'description': 'Input array or vector of bytes.'
         },
         'buf': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input array or vector of bytes.'
         },
@@ -6361,17 +6361,17 @@ def get_imencode_params_info():
 def get_inRange_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input array or vector of bytes.'
         },
         'lowerb': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input array or vector of bytes.'
         },
         'upperb': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input array or vector of bytes.'
         },
@@ -6385,17 +6385,17 @@ def get_inRange_params_info():
 def get_initCameraMatrix2D_params_info():#Bug
     info = {
         'objectPoints': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '3xN/Nx3 1-channel or 1xN/Nx1 3-channel,'
         },
         'imagePoints': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': ' 2xN/Nx2 1-channel or 1xN/Nx1 2-channel.'
         },
         'imageSize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Size of the image used only to initialize the intrinsic camera matrix.'
         },
@@ -6408,12 +6408,12 @@ def get_initCameraMatrix2D_params_info():#Bug
 def get_initInverseRectificationMap_params_info():
     info = {
         'cameraMatrix': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input camera matrix A=[fx 0 cx; 0 fy cy; 0 0 1].'
         },
         'distCoeffs': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'flag': 'None'
 ,            'description': ''
@@ -6424,12 +6424,12 @@ def get_initInverseRectificationMap_params_info():
             'description': 'Optional rectification transformation in the object space (3x3 matrix). If the matrix is empty, the identity transformation is assumed.'
         },
         'newCameraMatrix': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'New camera matrix'
         },
         'imageSize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type':'int',
             'description': 'Distorted image size.'
         },
@@ -6449,12 +6449,12 @@ def get_initInverseRectificationMap_params_info():
 def get_initUndistortRectifyMap_params_info():
     info = {
         'cameraMatrix': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input camera matrix A=[fx 0 cx; 0 fy cy; 0 0 1].'
         },
         'distCoeffs': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'flag': 'None'
 ,            'description': ''
@@ -6465,12 +6465,12 @@ def get_initUndistortRectifyMap_params_info():
             'description': 'Optional rectification transformation in the object space (3x3 matrix). If the matrix is empty, the identity transformation is assumed.'
         },
         'newCameraMatrix': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'New camera matrix'
         },
         'imageSize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type':'int',
             'description': 'Distorted image size.'
         },
@@ -6490,12 +6490,12 @@ def get_initUndistortRectifyMap_params_info():
 def get_inpaint_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input image. 8-bit 3-channel image.'
         },
         'inpaintMask': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Inpainting mask, an 8-bit single-channel image. Non-zero pixels indicate the area that needs to be inpainted.'
         },
@@ -6518,7 +6518,7 @@ def get_inpaint_params_info():
 def get_invertAffineTransform_params_info():
     info = {
         'input': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '3x2'
         },
@@ -6532,22 +6532,22 @@ def get_invertAffineTransform_params_info():
 def get_line_params_info():
     info = {
         'img': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32 or float64',
             'description': 'The image on which the line is to be drawn. It can be of any type.'
         },
         'pt1': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'The first point of the line segment, represented as a tuple of two integers (x, y).'
         },
         'pt2': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'The second point of the line segment, represented as a tuple of two integers (x, y).'
         },
         'color': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'The color of the line, represented as a tuple of three integers (B, G, R).'
         },
@@ -6572,12 +6572,12 @@ def get_line_params_info():
 def get_magnitude_params_info():
     info = {
         'x': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64',
             'description': 'Floating-point array of x-coordinates of the vectors.'
         },
         'y': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64 as same as',
             'description': 'Floating-point array of y-coordinates of the vectors; it must have the same size as x.'
         },
@@ -6591,12 +6591,12 @@ def get_magnitude_params_info():
 def get_matMulDeriv_params_info():
     info = {
         'A': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64',
             'description': 'First multiplied matrix.'
         },
         'B': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64 as same as',
             'description': 'Second multiplied matrix.'
         },
@@ -6610,12 +6610,12 @@ def get_matMulDeriv_params_info():
 def get_matchShapes_params_info():
     info = {
         'contour1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'First contour or grayscale image.'
         },
         'contour2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Second contour or grayscale image.'
         },
@@ -6640,12 +6640,12 @@ def get_matchShapes_params_info():
 def get_mixChannels_params_info():
     info = {
         'src1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uin8 or float32',
             'description': '8-bit 3-channel'
         },
         'src2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uin8 or float32 as same as',
             'description': '8-bit 3-channel'
         },
@@ -6665,7 +6665,7 @@ def get_mixChannels_params_info():
 def get_moments_params_info():#bug
     info = {
         'array': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32',
             'description': '8-bit single-channel'
         },
@@ -6684,7 +6684,7 @@ def get_moments_params_info():#bug
 def get_morphologyEx_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32',
             'description': 'Source image. The number of channels can be arbitrary.'
         },
@@ -6695,7 +6695,7 @@ def get_morphologyEx_params_info():
             'description': 'Type of a morphological operation, see #MorphTypes.'
         },
         'kernel': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'It can be created using #getStructuringElement.'
         },
@@ -6710,12 +6710,12 @@ def get_morphologyEx_params_info():
 def get_mulSpectrums_params_info():
     info = {
         'a': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64',
             'description': 'First input array, result of a real or complex Fourier transform.'
         },
         'b': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64 as same as',
             'description': 'Second input array of the same size and type as the first. Also, result of a real or complex Fourier transform.'
         },
@@ -6735,7 +6735,7 @@ def get_mulSpectrums_params_info():
 def get_mulTransposed_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32',
             'description': 'Input matrix. Unlike cv::gemm, it can handle matrices of any depth.'
         },
@@ -6753,12 +6753,12 @@ def get_mulTransposed_params_info():
 def get_norm_params_info():
     info = {
         'src1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'First input array. For single array operation, it calculates its absolute norm. For two arrays, it calculates the absolute difference norm or the relative difference norm with src2.'
         },
         'src2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 as same as',
             'description': 'Second input array of the same size and the same type as src1. This parameter is used for calculating the norm between src1 and src2.',
         },
@@ -6777,7 +6777,7 @@ def get_norm_params_info():
 def get_normalize_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input array to be normalized.'
         },
@@ -6804,12 +6804,12 @@ def get_normalize_params_info():
 def get_phase_params_info():
     info = {
         'x': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input floating-point array of x-coordinates of 2D vectors.'
         },
         'y': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input floating-point array of y-coordinates of 2D vectors. It must have the same size and the same type as x.'
         },
@@ -6823,12 +6823,12 @@ def get_phase_params_info():
 def get_phaseCorrelate_params_info():
     info = {
         'points1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64',
             'description': 'Source floating point array (CV_32FC1 or CV_64FC1).'
         },
         'points2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64 as same as',
             'description': 'Source floating point array (CV_32FC1 or CV_64FC1).'
         },
@@ -6842,12 +6842,12 @@ def get_phaseCorrelate_params_info():
 def get_pointPolygonTest_params_info():
     info = {
         'contour': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input contour, represented as a 2D point array.'
         },
         'pt': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'The point to be tested against the contour.'
         },
@@ -6865,12 +6865,12 @@ def get_pointPolygonTest_params_info():
 def get_polarToCart_params_info():
     info = {
         'magnitude': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64',
             'description': '1xN/Nx1 2-channel'
         },
         'angle': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32 or float64 as same as',
             'description': '1xN/Nx1 2-channel'
         },
@@ -6889,7 +6889,7 @@ def get_polarToCart_params_info():
 def get_pyrMeanShiftFiltering_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'The source image, which must be an 8-bit 3-channel image.'
         },
@@ -6917,12 +6917,12 @@ def get_pyrMeanShiftFiltering_params_info():
 def get_rectangleIntersectionArea_params_info():
     info = {
         'imgRect1': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'The rectangle representing the image boundaries. It should be specified as a tuple (x, y, width, height), where (x, y) is the top-left corner, and width and height are the dimensions of the rectangle.'
         },
         'imgRect2': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'The rectangle representing the image boundaries. It should be specified as a tuple (x, y, width, height), where (x, y) is the top-left corner, and width and height are the dimensions of the rectangle.'
         },
@@ -6936,70 +6936,70 @@ def get_rectangleIntersectionArea_params_info():
 def get_rectify3Collinear_params_info():#bug
     info = {
         'cameraMatrix1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64',
             'description': 'matrix'
         },
         'distCoeffs1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64',
             'flag': 'None',
             'description': ''
         },
         'cameraMatrix2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64',
             'description': 'matrix'
         },
         'distCoeffs2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64',
             'flag': 'None',
             'description': ''
         },
         'cameraMatrix3': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64',
             'description': 'matrix'
         },
         'distCoeffs3': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64',
             'flag': 'None',
             'description': ''
         },
         'imgpt1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64',
             'description': '2x3'
         },
         'imgpt3': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64',
             'description': '2x3'
         },
         'imageSize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Size of the image used for rectification.'
         },
         'R12': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64',
             'description': 'Rotation matrix between the first and the second camera coordinate systems.'
         },
         'T12': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64',
             'description': '3x1'
         },
         'R13': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64',
             'description': ' 3x3 matrix '
         },
         'T13': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64',
             'description': ' 3x1 '
         },
@@ -7008,7 +7008,7 @@ def get_rectify3Collinear_params_info():#bug
             'description': 'Free scaling parameter.'
         },
         'newImgSize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Size of the image after rectification.'
         },
@@ -7027,7 +7027,7 @@ def get_rectify3Collinear_params_info():#bug
 def get_reduceArgMax_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input 8-bit single-channel array.'
         },
@@ -7047,7 +7047,7 @@ def get_reduceArgMax_params_info():
 def get_reduceArgMin_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8',
             'description': 'Input 8-bit single-channel array.'
         },
@@ -7067,17 +7067,17 @@ def get_reduceArgMin_params_info():
 def get_remap_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input 8-bit single-channel array.'
         },
         'map1': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'The first map of either (x,y) points or just x values. Type can be CV_16SC2, CV_32FC1, or CV_32FC2. Refer to #convertMaps for details on converting a floating point representation to fixed-point for speed.'
         },
         'map2': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'The second map of y values having the type CV_16UC1, CV_32FC1, or none (empty map if map1 is (x,y) points), respectively.'
         },
@@ -7108,12 +7108,12 @@ def get_remap_params_info():
 def get_reprojectImageTo3D_params_info():
     info = {
         'disparity': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'uint8 or float32',
             'description': 'Input single-channel disparity image. Values of 8-bit / 16-bit signed formats are assumed to have no fractional bits. If the disparity is 16-bit signed format, it should be divided by 16 and scaled to float before being used.'
         },
         'maxtr': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '4x4 matrix obtained with stereoRectify.'
         },
@@ -7138,33 +7138,33 @@ def get_reprojectImageTo3D_params_info():
 def get_undistortPointsIter_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input vector of 2D points (with single-channel two-column matrix, or two-channel 1-column matrix, or std::vector<Point2f>).'
         },
         'cameraMatrix': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Camera matrix f$A=ecthreethree{fx}{0}{cx}{0}{fy}{cy}{0}{0}{1}$.'
         },
         'distCoeffs': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'flag': 'None',
             'description': 'Input of vector distortion coefficients. If empty, zero coefficients are assumed.',
         },
         'R': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Rectification transformation in the object space (3x3 matrix). Optional.'
         },
         'P': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'New camera matrix (3x3) or new projection matrix (3x4). Optional.'
         },
         'criteria': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'default': '(cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 40, 0.001)',
             'flag': 'None',
@@ -7180,12 +7180,12 @@ def get_undistortPointsIter_params_info():
 def get_validateDisparity_params_info():#crash
     info = {
         'disparity': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int16',
             'description': 'Input disparity map. It is a 8-bit single-channel image, where each pixel corresponds to the disparity value at the respective location.'
         },
         'cost': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int16 as same as ',
             'description': '8-bit single-channel image Input cost (or confidence) for each disparity value. It should have the same size as the disparity map. Each element represents the matching cost at the corresponding location.'
         },
@@ -7213,28 +7213,28 @@ def get_validateDisparity_params_info():#crash
 def get_undistortPoints_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input vector of 2D points (with single-channel two-column matrix, or two-channel 1-column matrix, or std::vector<Point2f>).'
         },
         'cameraMatrix': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Camera matrix f$A=ecthreethree{fx}{0}{cx}{0}{fy}{cy}{0}{0}{1}$.'
         },
         'distCoeffs': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'flag': 'None',
             'description': 'Input of vector distortion coefficients. If empty, zero coefficients are assumed.',
         },
         'R': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Rectification transformation in the object space (3x3 matrix). Optional.'
         },
         'P': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'New camera matrix (3x3) or new projection matrix (3x4). Optional.'
         },
@@ -7248,17 +7248,17 @@ def get_undistortPoints_params_info():
 def get_undistortImagePoints_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input vector of 2D points (with single-channel two-column matrix, or two-channel 1-column matrix, or std::vector<Point2f>).'
         },
         'cameraMatrix': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Camera matrix f$A=ecthreethree{fx}{0}{cx}{0}{fy}{cy}{0}{0}{1}$.'
         },
         'distCoeffs': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'flag': 'None',
             'description': 'Input of vector distortion coefficients. If empty, zero coefficients are assumed.',
@@ -7273,23 +7273,23 @@ def get_undistortImagePoints_params_info():
 def get_undistort_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Input vector of 2D points (with single-channel two-column matrix, or two-channel 1-column matrix, or std::vector<Point2f>).'
         },
         'cameraMatrix': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Camera matrix f$A=ecthreethree{fx}{0}{cx}{0}{fy}{cy}{0}{0}{1}$.'
         },
         'distCoeffs': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'flag': 'None',
             'description': 'Input of vector distortion coefficients. If empty, zero coefficients are assumed.',
         },
         'newCameraMatrix': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'New camera matrix'
         },
@@ -7303,12 +7303,12 @@ def get_undistort_params_info():
 def get_getAffineTransform_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '2x3 Coordinates of triangle vertices in the source image. It is an array of points or a matrix of shape (3,2) containing the coordinates of the vertices of the triangle in the source image.'
         },
         'dst': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '2x3 Coordinates of the corresponding triangle vertices in the destination image. It is an array of points or a matrix of shape (3,2) containing the coordinates of the vertices of the triangle in the destination image.'
         },
@@ -7322,12 +7322,12 @@ def get_getAffineTransform_params_info():
 def get_getDefaultNewCameraMatrix_params_info():
     info = {
         'cameraMatrix': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float64',
             'description': 'Input camera matrix. It is a 3x3 matrix that represents the intrinsic camera parameters.'
         },
         'imgsize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Camera view image size in pixels. It is a tuple of two integers representing the width and height of the image.'
         },
@@ -7395,7 +7395,7 @@ def get_getFontScaleFromHeight_params_info():
 def get_getGaborKernel_params_info():
     info = {
         'ksize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Size of the filter to be returned. Represents the width and height of the Gabor kernel.'
         },
@@ -7485,17 +7485,17 @@ def get_getOptimalDFTSize_params_info():
 def get_getOptimalNewCameraMatrix_params_info():
     info = {
         'cameraMatrix': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'int',
             'description': 'Input camera intrinsic matrix.'
         },
         'distCoeffs': {
-            'format': 'None',
+            'size': 'None',
             'type': 'int',
             'description': 'Input vector of distortion coefficients. If NULL/empty, zero distortion coefficients are assumed.'
         },
         'imageSize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Original image size.'
         },
@@ -7513,12 +7513,12 @@ def get_getOptimalNewCameraMatrix_params_info():
 def get_getPerspectiveTransform_params_info():
     info = {
         'src': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '2x4 matrix Coordinates of quadrangle vertices in the source image.'
         },
         'dst': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': '2x4 matrix Coordinates of the corresponding quadrangle vertices in the destination image.'
         },
@@ -7538,17 +7538,17 @@ def get_getPerspectiveTransform_params_info():
 def get_getRectSubPix_params_info():
     info = {
         'image': {
-            'format': 'numpy.ndarray',
+            'size': 'numpy.ndarray',
             'type': 'float32',
             'description': 'Source image.'
         },
         'patchSize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Size of the extracted patch.'
         },
         'center': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Floating point coordinates of the center of the extracted rectangle within the source image. The center must be inside the image.'
         },
@@ -7562,7 +7562,7 @@ def get_getRectSubPix_params_info():
 def get_getRotationMatrix2D_params_info():
     info = {
         'center': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Center of the rotation in the source image.'
         },
@@ -7590,12 +7590,12 @@ def get_getStructuringElement_params_info():
             'description': 'Element shape that could be one of the predefined shapes: MORPH_RECT, MORPH_CROSS, or MORPH_ELLIPSE.'
         },
         'ksize': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'description': 'Size of the structuring element.'
         },
         'anchor': {
-            'format': 'tuple',
+            'size': 'tuple',
             'type': 'int',
             'default': '(-1, -1)',
             'flag': 'None',
