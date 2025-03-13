@@ -57,9 +57,9 @@ def mutate_parameters(args, params_info, mutation_history):
         param_type = param_info.get('type')
         strategy = mutation_history.suggest_mutation_strategy(param_type)
 
-        if param_info.get('format') == 'numpy.ndarray':
+        if param_info.get('size') == 'numpy.ndarray':
             mutated_arg = apply_ndarray_mutation(arg, param_info, strategy)
-        elif param_info.get('format') == 'tuple':
+        elif param_info.get('size') == 'tuple':
             mutated_arg = apply_tuple_mutation(arg, param_info, strategy)
         elif 'int' in param_type:
             mutated_arg = apply_int_type_mutation(arg, param_type, strategy)
