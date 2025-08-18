@@ -200,7 +200,7 @@ If you only want to run a *subset* of the API dataset, you can limit how many AP
 
 ---
 
-## Paper ↔ Artifact Mapping (concise)
+## Paper ↔ Artifact Mapping
 
 A lightweight map from paper items to where they live in this repo.
 
