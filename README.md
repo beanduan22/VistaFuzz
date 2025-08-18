@@ -176,7 +176,6 @@ If you only want to run a *subset* of the API dataset, you can limit how many AP
 * **Preferred (if supported by your `main.py`):** pass a limit flag, e.g. `--max-apis N`.
 
   ```bash
-  # inside the container
   cd /app
   python3 main.py --max-apis 50
   ```
