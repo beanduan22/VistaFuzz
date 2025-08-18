@@ -4,7 +4,7 @@
 [![GitHub release](https://img.shields.io/github/v/release/beanduan22/VistaFuzz)](https://github.com/beanduan22/VistaFuzz/releases)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-> Documentation-guided fuzzing for **OpenCV-Python**. Reproducible artifact with Docker, scripts, and standardized API metadata.
+> Documentation-guided fuzzing for **OpenCV-Python**. Reproducible artifact with Docker, scripts, and standardized API.
 
 ---
 
