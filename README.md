@@ -1,8 +1,11 @@
-
-beanduan22/VistaFuzz
-DOI: 10.5281/zenodo.16891964
-
 # VistaFuzz
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16891964.svg)](https://doi.org/10.5281/zenodo.16891964)
+[![GitHub release](https://img.shields.io/github/v/release/beanduan22/VistaFuzz)](https://github.com/beanduan22/VistaFuzz/releases)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+> Documentation-guided fuzzing for OpenCV. Reproducible artifact with Docker, scripts, and standardized API data.
+
 # Run the tool
 OpenCV-Testing is a tool of fuzzing Opencv-python, you can run main.py directly.
 
