@@ -177,7 +177,7 @@ docker cp <container_id>:/usr/local/src/opencv/build/coverage_report.html .
 
 ---
 
-## Standardized API Metadata
+## Standardized API
 VistaFuzz consumes standardized API metadata to guide input generation:
 ````
 
