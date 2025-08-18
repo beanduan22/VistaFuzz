@@ -165,17 +165,38 @@ This file describes each API's **name, parameters, types/constraints**, etc., wh
 
 ## Optional: Run without Docker
 
-> **Not recommended** (you may encounter compiler/coverage toolchain differences). If necessary, ensure your local environment matches the container and consider the following:
+> **Not recommended** — native builds can diverge from the container. If you still choose a local run, mirror the container toolchain and follow this checklist:
 
-* Python ≥ 3.8; gcc/clang supports coverage flags (`--coverage` or `-fprofile-arcs -ftest-coverage`).
-* Install `gcovr` (or `lcov`/`genhtml`).
-* Build OpenCV from source with coverage enabled, ensuring `.gcno/.gcda` files are produced under `build`.
-* Pin key package versions (example):
+* **Expect small variations** in coverage or numerics across machines due to BLAS/hardware differences.
+
+### Run a Small Subset of APIs
+
+If you only want to run a *subset* of the API dataset, you can limit how many APIs `main.py` processes:
+
+* **Preferred (if supported by your `main.py`):** pass a limit flag, e.g. `--max-apis N`.
 
   ```bash
-  pip install "numpy==1.26.*" "gcovr==7.*"
+  # inside the container
+  cd /app
+  python3 main.py --max-apis 50
   ```
-* Minor differences in BLAS/hardware may lead to small coverage or numerical deviations.
+* **Otherwise (quick code tweak):** at the top of `OpenCV-Testing/main/main.py`, add a limit and slice the loaded list. For example:
+
+  ```python
+  import os
+  MAX_APIS = int(os.getenv("VISTAFUZZ_MAX_APIS", "0"))  # 0 = no limit
+
+  apis = load_json_file('API/OpenCV_API_filtered_subset.json')
+  if MAX_APIS > 0:
+      apis = apis[:MAX_APIS]
+  ```
+
+  Then run with an environment variable:
+
+  ```bash
+  VISTAFUZZ_MAX_APIS=50 python3 main.py
+  ```
+
 
 ---
 
