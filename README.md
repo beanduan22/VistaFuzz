@@ -151,9 +151,9 @@ xdg-open ./coverage_report.html
 
 ---
 
-## Standardized API Metadata
+## Standardized API
 
-VistaFuzz consumes standardized API metadata to guide input generation:
+VistaFuzz consumes standardized API to guide input generation:
 
 ```
 OpenCV-Testing/API_info.py
