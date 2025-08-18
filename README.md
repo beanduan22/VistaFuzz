@@ -61,40 +61,30 @@ VistaFuzz/
 
 ---
 
-## Quickstart (Docker)
+Quickstart (Docker)
 
-> Recommended for **reproducibility**.
+Recommended for reproducibility.
 
-1. **Build the Docker image**
-
-   ```bash
-   ```
+Build the Docker image
 
 docker build -t opencv-coverage .
 
-````
+Run the container (mount this repo)
 
-2. **Run the container (mount this repo)**
-- **Linux/macOS**
-  ```bash
-docker run -it --rm \
--v "$PWD/OpenCV-Testing:/app" \
---name opencv_coverage_container_1 opencv-coverage
-  ```
-- **Windows PowerShell**
-  ```powershell
-docker run -it --rm `
--v "${PWD}\OpenCV-Testing:/app" `
---name opencv_coverage_container_1 opencv-coverage
-  ```
+Linux/macOS
 
-3. **Inside the container: run the fuzzer**
-```bash
+docker run -it --rm -v "$PWD/OpenCV-Testing:/app" --name opencv_coverage_container_1 opencv-coverage
+
+Windows PowerShell
+
+docker run -it --rm -v "${PWD}\OpenCV-Testing:/app" --name opencv_coverage_container_1 opencv-coverage
+
+Inside the container: run the fuzzer
+
 cd /app
 python3 main.py
-````
 
-> Tip: Use `ls -l` to confirm the volume is mounted; logs are written to the current working directory.
+Tip: Use ls -l to confirm the volume is mounted; logs are written to the current working directory.
 
 ---
 
