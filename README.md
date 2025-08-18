@@ -1,3 +1,7 @@
+
+beanduan22/VistaFuzz
+DOI: 10.5281/zenodo.16891964
+
 # VistaFuzz
 # Run the tool
 OpenCV-Testing is a tool of fuzzing Opencv-python, you can run main.py directly.
