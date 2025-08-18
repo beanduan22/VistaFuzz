@@ -200,6 +200,19 @@ If you only want to run a *subset* of the API dataset, you can limit how many AP
 
 ---
 
+## Paper ↔ Artifact Mapping (concise)
+
+A lightweight map from paper items to where they live in this repo.
+
+| Paper item                        | Where in repo / quick check                                                                                                                |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Method pipeline**               | `OpenCV-Testing/main.py`, `OpenCV-Testing/tool/` — running `main.py` exercises the full pipeline.                                          |
+| **Standardized API dataset**      | `OpenCV-Testing/API/OpenCV_API_filtered_subset.json`, `OpenCV-Testing/tool/API_info.py` — inspect to see API names/params/constraints.     |
+| **Input generation & mutations**  | `OpenCV-Testing/tool/opencv_args_seed_generator.py`, `OpenCV-Testing/tool/mutation*.py` — logs show generated/mutated inputs during a run. |
+| **Oracles (Crash/NaN/Exception)** | `OpenCV-Testing/tool/oracle.py`, `OpenCV-Testing/tool/test.py` — anomalies are recorded by the oracles.                                    |
+| **Scale & bug list**              | `OpenCV-Testing/API/OpenCV_API_filtered_subset.json` (API count), `OpenCV-Testing/BugLinks.csv` (reported/confirmed issues).               |
+| **Coverage reproduction**         | `Dockerfile` and README section **Generate Coverage (gcovr)** — produces `coverage_report.html`.                                           |
+
 ## Expected Outputs
 
 * Running `python3 main.py` outputs which APIs/test cases were executed and runtime logs.
@@ -239,3 +252,4 @@ If you only want to run a *subset* of the API dataset, you can limit how many AP
 ## License
 
 This project is released under the [MIT License](LICENSE).
+
