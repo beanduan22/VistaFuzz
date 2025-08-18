@@ -60,31 +60,79 @@ VistaFuzz/
 ```
 
 ---
+## Quickstart (Docker)
 
-Quickstart (Docker)
+**Recommended for reproducibility.**
 
-Recommended for reproducibility.
+1. **Build the Docker image**
 
-Build the Docker image
-
+```bash
 docker build -t opencv-coverage .
+```
 
-Run the container (mount this repo)
+2. **Run the container (mount this repo)**
 
-Linux/macOS
+* **Linux/macOS**
 
+```bash
 docker run -it --rm -v "$PWD/OpenCV-Testing:/app" --name opencv_coverage_container_1 opencv-coverage
+```
 
-Windows PowerShell
+* **Windows PowerShell**
 
+```powershell
 docker run -it --rm -v "${PWD}\OpenCV-Testing:/app" --name opencv_coverage_container_1 opencv-coverage
+```
 
-Inside the container: run the fuzzer
+3. **Inside the container: run the fuzzer**
 
+```bash
 cd /app
 python3 main.py
+```
 
-Tip: Use ls -l to confirm the volume is mounted; logs are written to the current working directory.
+> Tip: Use `ls -l` to confirm the volume is mounted; logs are written to the current working directory.
+
+---
+
+## Generate Coverage (gcovr)
+
+1. **Enter the OpenCV build directory (inside the container)**
+
+   ```bash
+   ```
+
+cd /usr/local/src/opencv/build/
+
+````
+
+2. **Install gcovr**
+```bash
+pip install gcovr
+````
+
+3. **Generate an HTML coverage report**
+
+   ```bash
+   ```
+
+gcovr -r /usr/local/src/opencv --html --html-details -o coverage\_report.html
+
+````
+
+4. **Copy the report back to the host**
+- Find the container ID:
+  ```bash
+docker ps
+  ```
+- Copy the report:
+  ```bash
+docker cp <container_id>:/usr/local/src/opencv/build/coverage_report.html .
+  ```
+- Open the report:
+  - macOS: `open ./coverage_report.html`
+  - Windows: `start .\coverage_report.html`
+  - Linux: `xdg-open ./coverage_report.html`
 
 ---
 
@@ -140,7 +188,7 @@ This file describes each API's **name, parameters, types/constraints**, etc., wh
 
 ---
 
-## Optional: Run without Docker
+## Run without Docker
 > **Not recommended** (you may encounter compiler/coverage toolchain differences). If necessary, ensure your local environment matches the container and consider the following:
 
 - Python ≥ 3.8; gcc/clang supports coverage flags (`--coverage` or `-fprofile-arcs -ftest-coverage`).
