@@ -99,106 +99,82 @@ python3 main.py
 
 1. **Enter the OpenCV build directory (inside the container)**
 
-   ```bash
-   ```
-
+```bash
 cd /usr/local/src/opencv/build/
-
-````
+```
 
 2. **Install gcovr**
+
 ```bash
 pip install gcovr
-````
+```
 
 3. **Generate an HTML coverage report**
 
-   ```bash
-   ```
-
-gcovr -r /usr/local/src/opencv --html --html-details -o coverage\_report.html
-
-````
-
-4. **Copy the report back to the host**
-- Find the container ID:
-  ```bash
-docker ps
-  ```
-- Copy the report:
-  ```bash
-docker cp <container_id>:/usr/local/src/opencv/build/coverage_report.html .
-  ```
-- Open the report:
-  - macOS: `open ./coverage_report.html`
-  - Windows: `start .\coverage_report.html`
-  - Linux: `xdg-open ./coverage_report.html`
-
----
-
-## Generate Coverage (gcovr)
-
-1. **Enter the OpenCV build directory (inside the container)**
-
-   ```bash
-   ```
-
-cd /usr/local/src/opencv/build/
-
-````
-
-2. **Install gcovr**
 ```bash
-pip install gcovr
-````
-
-3. **Generate an HTML coverage report**
-
-   ```bash
-   ```
-
-gcovr -r /usr/local/src/opencv --html --html-details -o coverage\_report.html
-
-````
+gcovr -r /usr/local/src/opencv --html --html-details -o coverage_report.html
+```
 
 4. **Copy the report back to the host**
-- Find the container ID:
-  ```bash
+
+* Find the container ID:
+
+```bash
 docker ps
-  ```
-- Copy the report:
-  ```bash
+```
+
+* Copy the report:
+
+```bash
 docker cp <container_id>:/usr/local/src/opencv/build/coverage_report.html .
-  ```
-- Open the report:
-  - macOS: `open ./coverage_report.html`
-  - Windows: `start .\coverage_report.html`
-  - Linux: `xdg-open ./coverage_report.html`
+```
+
+* Open the report:
+
+**macOS**
+
+```bash
+open ./coverage_report.html
+```
+
+**Windows (PowerShell)**
+
+```powershell
+start ./coverage_report.html
+```
+
+**Linux**
+
+```bash
+xdg-open ./coverage_report.html
+```
 
 ---
 
-## Standardized API
+## Standardized API Metadata
+
 VistaFuzz consumes standardized API metadata to guide input generation:
-````
 
-OpenCV-Testing/API\_info.py
+```
+OpenCV-Testing/API_info.py
+```
 
-````
 This file describes each API's **name, parameters, types/constraints**, etc., which the fuzzer uses to synthesize valid and diverse inputs.
 
 ---
 
-## Run without Docker
+## Optional: Run without Docker
+
 > **Not recommended** (you may encounter compiler/coverage toolchain differences). If necessary, ensure your local environment matches the container and consider the following:
 
-- Python ≥ 3.8; gcc/clang supports coverage flags (`--coverage` or `-fprofile-arcs -ftest-coverage`).
-- Install `gcovr` (or `lcov`/`genhtml`).
-- Build OpenCV from source with coverage enabled, ensuring `.gcno/.gcda` files are produced under `build`.
-- Pin key package versions (example):
+* Python ≥ 3.8; gcc/clang supports coverage flags (`--coverage` or `-fprofile-arcs -ftest-coverage`).
+* Install `gcovr` (or `lcov`/`genhtml`).
+* Build OpenCV from source with coverage enabled, ensuring `.gcno/.gcda` files are produced under `build`.
+* Pin key package versions (example):
+
   ```bash
   pip install "numpy==1.26.*" "gcovr==7.*"
-````
-
+  ```
 * Minor differences in BLAS/hardware may lead to small coverage or numerical deviations.
 
 ---
