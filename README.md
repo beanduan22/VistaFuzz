@@ -14,8 +14,6 @@
 * [Repository Layout](#repository-layout)
 * [Quickstart (Docker)](#quickstart-docker)
 * [Generate Coverage (gcovr)](#generate-coverage-gcovr)
-* [Standardized API Metadata](#standardized-api-metadata)
-* [Optional: Run without Docker](#optional-run-without-docker)
 * [Expected Outputs](#expected-outputs)
 * [Cite This Artifact](#cite-this-artifact)
 * [License](#license)
