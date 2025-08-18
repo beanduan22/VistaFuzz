@@ -1,4 +1,4 @@
-# VistaFuzz
+# Harnessing LLMs for Document-Guided Fuzzing of OpenCV Library (VistaFuzz)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16891964.svg)](https://doi.org/10.5281/zenodo.16891964)
 [![GitHub release](https://img.shields.io/github/v/release/beanduan22/VistaFuzz)](https://github.com/beanduan22/VistaFuzz/releases)
