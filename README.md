@@ -227,21 +227,20 @@ A lightweight map from paper items to where they live in this repo.
 
 ---
 
-## Cite This Artifact
+## Cite This Paper/Artifact
 
-* **DOI:** [10.5281/zenodo.16891964](https://doi.org/10.5281/zenodo.16891964)
-
-<details>
-<summary><b>BibTeX</b> (click to expand)</summary>
 
 ```bibtex
-@software{vistafuzz_zenodo_16891964,
-  title   = {VistaFuzz: Documentation-guided fuzzing for OpenCV},
-  author  = {Duan, Bin and Dong, Ruican and Kim, Dan Dongseong and Yang, Guowei},
-  year    = {2025},
-  doi     = {10.5281/zenodo.16891964},
-  url     = {https://doi.org/10.5281/zenodo.16891964}
-}
+@INPROCEEDINGS{11186096,
+  author={Duan, Bin and Mahmud, Tarek and Che, Meiru and Yan, Yan and Dong, Naipeng and Kim, Dan Dongseong and Yang, Guowei},
+  booktitle={2025 IEEE International Conference on Software Maintenance and Evolution (ICSME)}, 
+  title={Harnessing LLMs for Document-Guided Fuzzing of OpenCV Library}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={73-84},
+  keywords={Computer vision;Visualization;Software maintenance;Large language models;Computer bugs;Fuzzing;Libraries;Data mining;Reliability;Testing;Fuzzing;OpenCV Libraries;Large Language Models},
+  doi={10.1109/ICSME64153.2025.00017}}
 ```
 
 </details>
