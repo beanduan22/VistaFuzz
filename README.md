@@ -231,15 +231,13 @@ A lightweight map from paper items to where they live in this repo.
 
 
 ```bibtex
-@INPROCEEDINGS{11186096,
+@INPROCEEDINGS{VistaFuzz,
   author={Duan, Bin and Mahmud, Tarek and Che, Meiru and Yan, Yan and Dong, Naipeng and Kim, Dan Dongseong and Yang, Guowei},
   booktitle={2025 IEEE International Conference on Software Maintenance and Evolution (ICSME)}, 
   title={Harnessing LLMs for Document-Guided Fuzzing of OpenCV Library}, 
   year={2025},
-  volume={},
-  number={},
   pages={73-84},
-  keywords={Computer vision;Visualization;Software maintenance;Large language models;Computer bugs;Fuzzing;Libraries;Data mining;Reliability;Testing;Fuzzing;OpenCV Libraries;Large Language Models},
+  keywords={Computer vision;Software maintenance;Large language models;Fuzzing;Testing;OpenCV Libraries},
   doi={10.1109/ICSME64153.2025.00017}}
 ```
 
